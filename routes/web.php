@@ -1,7 +1,6 @@
 <?php
-Route::get('/', function () {
-    return view('Home');
-});
+
+Route::get('/','HomeController@index');
 
 route::get('/Aboutus','AboutusController@index');
 
