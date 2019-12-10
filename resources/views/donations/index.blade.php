@@ -59,6 +59,7 @@
   <section class="ftco-section">
     <div class="container">
       <div class="row d-flex">
+        @foreach($products as $product)
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
             <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
@@ -66,14 +67,15 @@
             <div class="text p-4 d-block">
               <div class="meta mb-3">
                 <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">محمد محمد</a></div>
+                <div><a href="#">{{$product->name}}</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
               <h3 class="heading mt-3 text-right"><a href="#">هنا عنوان الموضوع</a></h3>
-              <p class="text-right"> هني دوه زايده تفتفيت اااه قصدي ملخص او شرح عالموضوع الي مش مروف شن هوا </p>
+              <p class="text-right"> {{$product -> description}} </p>
             </div>
           </div>
         </div>
+        @endforeach
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
             <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">

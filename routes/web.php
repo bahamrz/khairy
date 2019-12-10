@@ -2,9 +2,9 @@
 Route::get('/', function () {
     return view('Home');
 });
-route::get('/AboutUs', 'function(){
+route::get('/AboutUs', function(){
     return view('AboutUs');
-});'
+});
 route::get('/ContactUs', function(){
 return view('ContactUs');
 });
