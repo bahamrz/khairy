@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DonationsController extends Controller
+class DonationController extends Controller
 {
     public function index(){
-      return view('donations.index');
+      
+      return view('donation.index');
     }
 }
