@@ -12,6 +12,9 @@ route::get('/SignUp','SignupController@index');
 
 route::get('/Event','EventController@index');
 
-route::get('/donation','DonationController@index');
+route::get('/donation','DonationController@index')->name('donation.index');
+
+route::get('/donation/create','ProductController@create');
+route::post('/createaction','ProductController@productstore');
 
 route::get('/Gallery','GalleryController@index');
