@@ -18,3 +18,7 @@ route::get('/donation/create','ProductController@create');
 route::post('/createaction','ProductController@productstore');
 
 route::get('/Gallery','GalleryController@index');
+
+
+
+
