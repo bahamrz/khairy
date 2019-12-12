@@ -4,19 +4,19 @@
 Route::get('/','HomeController@index');
 
 // About page route
-route::get('/Aboutus','AboutusController@index');
+route::get('/aboutus','AboutusController@index');
 
 // Contact Us page route
-route::get('/ContactUs','ContactusController@index');
+route::get('/contactus','ContactusController@index');
 
 //SignIn page route
-route::get('/SignIn','SigninController@index');
+route::get('/signin','HomeController@signin');
 
 //Signup Page route
-route::get('/SignUp','SignupController@index');
+route::get('/signup','HomeController@signup');
 
 //Events page route
-route::get('/Event','EventController@index');
+route::get('/event','EventController@index');
 
 //donations page route
 route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where if you choose to change the route;
@@ -26,4 +26,4 @@ route::get('/donation/create','DonationController@create');              //produ
 route::post('/createaction','DonationController@productstore')->name('actionstore');          //submit button action to save into database
 
 // Gallery page route
-route::get('/Gallery','GalleryController@index');
+route::get('/gallery','GalleryController@index');

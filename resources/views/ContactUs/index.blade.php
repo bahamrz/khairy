@@ -1,6 +1,7 @@
 @extends('Layout.main')
 @section('title','| تواصل معنا')
 @section('content')
+<body style="background-color:#41B3A3">
 
  <!-- **** Contact Form Styled with CSS External File **** -->
  <div class="container contact-form" id="baha-contactfrm">
@@ -35,5 +36,5 @@
 </div>
 <!-- End of Contact Form Code -->
 
-
+</body>
 @endsection

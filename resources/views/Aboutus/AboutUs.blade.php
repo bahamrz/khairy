@@ -1,7 +1,7 @@
 @extends('Layout.main')
 
 @section('content')
-
+<body style="background-color:#41B3A3">
 <!-- SignUP Page -->
      <!-- Ethics Image -->
      <div class=" static-slider10" id="kh_ethics" style="background-image:url('images/kh_ethics.png');"></div>
@@ -46,6 +46,6 @@
         </div>
 <!-- End of testing -->
  
-
+</body>
 
 @endsection
