@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"crossorigin="anonymous">
     <!-- Font Awesome Font library (For Footer Icons ) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')}}"  crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset ('css/font-awesome.min.css')}}"  crossorigin="anonymous">
     <title>خيري @yield('title')</title>
     <!-- <link href="/css/Baha_style.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="{{asset('css/bootstrap-rtl.css')}}">
@@ -148,6 +148,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{{ asset('js/jquery.min.js')}}"></script>
+    <script src="{{ asset('js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{ asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
     <script src="{{ asset('js/popper.min.js')}}"></script>
     <script src="{{ asset('js/bootstrap.min.js')}}"></script>
@@ -161,8 +162,8 @@
     <script src="{{ asset('js/bootstrap-datepicker.js')}}"></script>
     <script src="{{ asset('js/jquery.timepicker.min.js')}}"></script>
     <script src="{{ asset('js/scrollax.min.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false')}}"></script>
-    <script src="{{ asset('js/google-map.js')}}"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false')}}"></script> -->
+    <!-- <script src="{{ asset('js/google-map.js')}}"></script> -->
     <script src="{{ asset('js/main.js')}}"></script>
   </body>
 </html>
