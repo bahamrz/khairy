@@ -34,18 +34,18 @@
 <!-- nav -->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar align-items-rghit">
   <div class="container">
-      <a class="navbar-brand" href="signup.html">تسجيل الدخول</a>
+      <a class="navbar-brand" href="signup">تسجيل الدخول</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> 
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav justify-content-end">
-          <li class="nav-item active"><a href="index.html" class="nav-link">الرئيسية</a></li>
-          <li class="nav-item"><a href="donations.html" class="nav-link">التبرعات</a></li>
-          <li class="nav-item"><a href="events.html" class="nav-link">الحملات</a></li>
-          <li class="nav-item"><a href="gallery.html" class="nav-link">استوديو صور</a></li>
-          <li class="nav-item"><a href="aboutkhairy.html" class="nav-link">كيف تستعمل خيري</a></li>
-          <li class="nav-item"><a href="ContactUs.html" class="nav-link">تواصل معنا</a></li>
+          <li class="nav-item active"><a href="index" class="nav-link">الرئيسية</a></li>
+          <li class="nav-item"><a href="donation" class="nav-link">التبرعات</a></li>
+          <li class="nav-item"><a href="events" class="nav-link">الحملات</a></li>
+          <li class="nav-item"><a href="gallery" class="nav-link">استوديو صور</a></li>
+          <li class="nav-item"><a href="aboutus" class="nav-link">كيف تستعمل خيري</a></li>
+          <li class="nav-item"><a href="Contactus" class="nav-link">تواصل معنا</a></li>
       </ul>
     </div>
   </div>
@@ -106,12 +106,12 @@
           <div class="ftco-footer-widget mb-4 ml-md-4 text-right">
             <h2 class="ftco-heading-2">صفحات رئيسيه</h2>
             <ul class="list-unstyled">
-                <li><a href="index.html" class="py-2 d-block">رئيسيه</a></li>
-                <li><a href="donations.html" class="py-2 d-block">تبرعات</a></li>
-                <li><a href="events.html" class="py-2 d-block">حملات خيريه</a></li>
-                <li><a href="aboutkhairy.html" class="py-2 d-block">كيف استعمل خيري؟</a></li>
-                <li><a href="gallery.html" class="py-2 d-block">ألبوم الصور</a></li>
-                <li><a href="ContactUs.html" class="py-2 d-block">تواصل معنا</a></li>
+                <li><a href="index" class="py-2 d-block">رئيسيه</a></li>
+                <li><a href="donation" class="py-2 d-block">تبرعات</a></li>
+                <li><a href="events" class="py-2 d-block">حملات خيريه</a></li>
+                <li><a href="aboutus" class="py-2 d-block">كيف استعمل خيري؟</a></li>
+                <li><a href="gallery" class="py-2 d-block">ألبوم الصور</a></li>
+                <li><a href="Contactus" class="py-2 d-block">تواصل معنا</a></li>
             </ul>
           </div>
         </div>

@@ -7,13 +7,13 @@ Route::get('/','HomeController@index');
 route::get('/Aboutus','AboutusController@index');
 
 // Contact Us page route
-route::get('/ContactUs','ContactusController@index');
-
+route::get('/Contactus','ContactusController@index');
+route::post('/Contactus','ContactusController@create');
 //SignIn page route
-route::get('/SignIn','SigninController@index');
+route::get('/Signin','SigninController@index');
 
 //Signup Page route
-route::get('/SignUp','SignupController@index');
+route::get('/Signup','SignupController@index');
 
 //Events page route
 route::get('/Event','EventController@index');
@@ -27,3 +27,4 @@ route::post('/createaction','DonationController@productstore');          //submi
 
 // Gallery page route
 route::get('/Gallery','GalleryController@index');
+route::get('/Organization','OrganizationController@index');
