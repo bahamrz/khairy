@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
-  <title>خيري - تبرعات</title>
+  <title>خيري - حملات خيريه</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="{{asset('css/bootstrap-rtl.css')}}">
@@ -27,12 +27,12 @@
     <div class="container">
         <a class="navbar-brand" href="signup.html">تسجيل الدخول</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span>
+        <span class="oi oi-menu"></span> 
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav justify-content-end">
             <li class="nav-item active"><a href="index.html" class="nav-link">الرئيسية</a></li>
-            <li class="nav-item"><a href="donations" class="nav-link">التبرعات</a></li>
+            <li class="nav-item"><a href="donations.html" class="nav-link">التبرعات</a></li>
             <li class="nav-item"><a href="events.html" class="nav-link">الحملات</a></li>
             <li class="nav-item"><a href="gallery.html" class="nav-link">استوديو صور</a></li>
             <li class="nav-item"><a href="aboutkhairy.html" class="nav-link">كيف تستعمل خيري</a></li>
@@ -43,13 +43,13 @@
   </nav>
   <!-- END nav -->
   <!-- main fullscreen img and overlay -->
-  <div class="hero-wrap" style="background-image: url('images/bg9.jpg');" data-stellar-background-ratio="0.5">
+  <div class="hero-wrap" style="background-image: url('images/volanteer1.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">رئيسيه</a></span> <span>تبرعات</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">التبرعات</h1>
+          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">رئيسيه</a></span> <span>حملات خيريه</span></p>
+          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">حملات خيريه</h1>
         </div>
       </div>
     </div>
@@ -58,96 +58,118 @@
   <!-- main cards section -->
   <section class="ftco-section">
     <div class="container">
-      <div class="row d-flex">
-        @foreach($products as $product)
+      <div class="row">
+        <!-- add one -->
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+            <a href="blog-single.html" class="block-20" style="background-image: url('images/cleaning.png');">
             </a>
-            <div class="text p-4 d-block">
+            <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
-                <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">{{$product->name}}</a></div>
+                <div><a href="#">سبتمبر 10, 2018</a></div>
+                <div><a href="#">الاء</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mt-3 text-right"><a href="#">هنا عنوان الموضوع</a></h3>
-              <p class="text-right"> {{$product -> description}} </p>
+              <h3 class="heading mb-4"><a href="#">اي حاجه</a></h3>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> صباحا10:30-03:30 مسائا</span> <span><i class="icon-map-o"></i> ميدان الشهداء</span></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, similique. Aperiam earum molestias quibusdam ipsam dolores at laborum harum quis delectus. Delectus doloribus quo itaque amet possimus, modi aspernatur
+                doloremque?</p>
+              <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
             </div>
           </div>
         </div>
-        @endforeach
+        <!-- add two -->
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+            <a href="blog-single.html" class="block-20" style="background-image: url('images/cleaning.png');">
             </a>
-            <div class="text p-4 d-block">
+            <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
-                <div><a href="#">2020 ,10 سبتمبر</a></div>
-                <div><a href="#">احمد احمد</a></div>
+                <div><a href="#">سبتمبر 10, 2018</a></div>
+                <div><a href="#">الاء</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mt-3 text-right"><a href="#">هنا عنوان تاني لموضوع تاني :v</a></h3>
-              <p class="text-right">بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا</p>
+              <h3 class="heading mb-4"><a href="#">اي حاجه</a></h3>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> صباحا10:30-03:30 مسائا</span> <span><i class="icon-map-o"></i> ميدان الشهداء</span></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, similique. Aperiam earum molestias quibusdam ipsam dolores at laborum harum quis delectus. Delectus doloribus quo itaque amet possimus, modi aspernatur
+                doloremque?</p>
+              <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
             </div>
           </div>
         </div>
+        <!-- add three -->
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+            <a href="blog-single.html" class="block-20" style="background-image: url('images/cleaning.png');">
             </a>
-            <div class="text p-4 d-block">
+            <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
-                <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">علي علي</a></div>
+                <div><a href="#">سبتمبر 10, 2018</a></div>
+                <div><a href="#">الاء</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mt-3 text-right"><a href="#">وصلت الفكره اعتقد :v</a></h3>
-              <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, reprehenderit maxime eveniet consectetur, rerum possimus id alias quos non sequi, facere veritatis architecto perspiciatis quo. Nobis modi, doloribus dolor repellat.</p>
+              <h3 class="heading mb-4"><a href="#">اي حاجه</a></h3>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> صباحا10:30-03:30 مسائا</span> <span><i class="icon-map-o"></i> ميدان الشهداء</span></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, similique. Aperiam earum molestias quibusdam ipsam dolores at laborum harum quis delectus. Delectus doloribus quo itaque amet possimus, modi aspernatur
+                doloremque?</p>
+              <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
             </div>
           </div>
         </div>
+        <!-- add 4 -->
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
+            <a href="blog-single.html" class="block-20" style="background-image: url('images/cleaning.png');">
             </a>
-            <div class="text p-4 d-block">
+            <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
-                <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">محمود محمود</a></div>
+                <div><a href="#">سبتمبر 10, 2018</a></div>
+                <div><a href="#">الاء</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mt-3 text-right"><a href="#">بالانجليزي the title of the subject</a></h3>
-              <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et laudantium at rerum officia beatae totam itaque possimus cumque excepturi odio, non modi explicabo facere nemo! Totam et nisi, facere ab.</p>
+              <h3 class="heading mb-4"><a href="#">اي حاجه</a></h3>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> صباحا10:30-03:30 مسائا</span> <span><i class="icon-map-o"></i> ميدان الشهداء</span></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, similique. Aperiam earum molestias quibusdam ipsam dolores at laborum harum quis delectus. Delectus doloribus quo itaque amet possimus, modi aspernatur
+                doloremque?</p>
+              <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
             </div>
           </div>
         </div>
+        <!-- add 5 -->
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
+            <a href="blog-single.html" class="block-20" style="background-image: url('images/cleaning.png');">
             </a>
-            <div class="text p-4 d-block">
+            <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
-                <div><a href="#">سبمبر 10, 2020</a></div>
-                <div><a href="#">وائل وائل</a></div>
+                <div><a href="#">سبتمبر 10, 2018</a></div>
+                <div><a href="#">الاء</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mt-3 text-right"><a href="#">another one</a></h3>
-              <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h3 class="heading mb-4"><a href="#">اي حاجه</a></h3>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> صباحا10:30-03:30 مسائا</span> <span><i class="icon-map-o"></i> ميدان الشهداء</span></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, similique. Aperiam earum molestias quibusdam ipsam dolores at laborum harum quis delectus. Delectus doloribus quo itaque amet possimus, modi aspernatur
+                doloremque?</p>
+              <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
             </div>
           </div>
         </div>
+        <!-- add 6 -->
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
+            <a href="blog-single.html" class="block-20" style="background-image: url('images/cleaning.png');">
             </a>
-            <div class="text p-4 d-block">
+            <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
-                <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">بهاء بهاء</a></div>
+                <div><a href="#">سبتمبر 10, 2018</a></div>
+                <div><a href="#">الاء</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mt-3 text-right"><a href="#">and another one</a></h3>
-              <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio praesentium fugiat quae sequi eaque! Quasi, at. Voluptatum eligendi molestiae, repellendus ipsam, nulla fuga autem nostrum perspiciatis veniam minima, eos voluptatem.</p>
+              <h3 class="heading mb-4"><a href="#">اي حاجه</a></h3>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> صباحا10:30-03:30 مسائا</span> <span><i class="icon-map-o"></i> ميدان الشهداء</span></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, similique. Aperiam earum molestias quibusdam ipsam dolores at laborum harum quis delectus. Delectus doloribus quo itaque amet possimus, modi aspernatur
+                doloremque?</p>
+              <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
             </div>
           </div>
         </div>
@@ -229,7 +251,7 @@
         </div>
         <div class="col-md-3">
           <div class="ftco-footer-widget mb-4 text-right">
-            <h2 class="ftco-heading-2"> للتواصل معنا</h2>
+            <h2 class="ftco-heading-2">للتواصل معنا</h2>
             <div class="block-23 mb-3">
               <ul>
                 <li><span class="icon icon-map-marker"></span><span class="text">حي الاندلس \ طرابلس \ ليبيا \ خلف مش عارف شني</span></li>
@@ -242,6 +264,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center">
+
           <p>
             Copyright &copy;<script>
               document.write(new Date().getFullYear());
@@ -251,7 +274,7 @@
       </div>
     </div>
   </footer>
-  <!-- footer ends-->
+  <!-- footer ends -->
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
       <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />

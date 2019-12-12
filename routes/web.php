@@ -1,27 +1,30 @@
 <?php
-Route::get('/', function () {
-    return view('Home');
-});
-route::get('/AboutUs', function(){
-    return view('AboutUs');
-});
-route::get('/ContactUs', function(){
-return view('ContactUs');
-});
-route::get('/SignIn',function(){
-    return view('SignIn');
-});
-route::get('/SignUp',function(){
-    return view('SignUp');
-});
-route::get('/Events',function(){
-    return view('Events');
-});
-route::get('/donations','DonationsController@index');
 
+// Home page route
+Route::get('/','HomeController@index');
 
-route::get('/Gallery',function(){
-    return view('Gallery');
-});
+// About page route
+route::get('/Aboutus','AboutusController@index');
 
+// Contact Us page route
+route::get('/Contactus','ContactusController@index');
+route::post('/Contactus','ContactusController@create');
+//SignIn page route
+route::get('/Signin','SigninController@index');
+
+//Signup Page route
+route::get('/Signup','SignupController@index');
+
+//Events page route
+route::get('/Event','EventController@index');
+
+//donations page route
+route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where;
+
+//product insert page and submit to database route
+route::get('/donation/create','ProductController@create');              //product insert page
+route::post('/createaction','ProductController@productstore');          //submit button action to save into database
+
+// Gallery page route
+route::get('/Gallery','GalleryController@index');
 route::get('/Organization','OrganizationController@index');
