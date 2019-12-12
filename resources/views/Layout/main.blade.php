@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"crossorigin="anonymous">
     <!-- Font Awesome Font library (For Footer Icons ) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')}}"  crossorigin="anonymous">
-    <title>عن خيري</title>
+    <title>خيري @yield('title')</title>
     <!-- <link href="/css/Baha_style.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="{{asset('css/bootstrap-rtl.css')}}">
     <link rel="stylesheet" href="{{ asset ('/css/bootstrap-rtl.css')}}"
@@ -44,7 +44,7 @@
           <li class="nav-item"><a href="donation" class="nav-link">التبرعات</a></li>
           <li class="nav-item"><a href="events" class="nav-link">الحملات</a></li>
           <li class="nav-item"><a href="gallery" class="nav-link">استوديو صور</a></li>
-          <li class="nav-item"><a href="aboutus" class="nav-link">كيف تستعمل خيري</a></li>
+          <li class="nav-item"><a href="Aboutus" class="nav-link">كيف تستعمل خيري</a></li>
           <li class="nav-item"><a href="Contactus" class="nav-link">تواصل معنا</a></li>
       </ul>
     </div>

@@ -1,4 +1,5 @@
 @extends('Layout.main')
+@section('title','| تواصل معنا')
 @section('content')
 
  <!-- **** Contact Form Styled with CSS External File **** -->
