@@ -59,7 +59,7 @@
   <section class="ftco-section">
     <div class="container">
       <div class="row d-flex">
-        @foreach($products as $product)
+        @foreach($product as $product)
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
             <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
@@ -70,7 +70,7 @@
                 <div><a href="#">{{$product->name}}</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mt-3 text-right"><a href="#">هنا عنوان الموضوع</a></h3>
+              <h3 class="heading mt-3 text-right"><a href="#">{{$product->name}}</a></h3>
               <p class="text-right"> {{$product -> description}} </p>
             </div>
           </div>
