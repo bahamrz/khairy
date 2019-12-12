@@ -25,6 +25,6 @@ class DonationController extends Controller
       $product1->status = false;
       $product1->save();
 
-      return redirect()->route('donation');
+      return redirect()->route('donation.index');
     }
 }

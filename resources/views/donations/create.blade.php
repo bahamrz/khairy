@@ -45,7 +45,7 @@ input[type=submit]:hover {
 
 <div class="container">
 
-    <form method="POST" action="{{ url('/createaction') }}">
+    <form method="POST" action="{{route('actionstore')}}">
 
         @csrf
 
