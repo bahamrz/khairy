@@ -23,7 +23,4 @@ route::get('/donation','DonationController@index')->name('donation.index');     
 
 //product insert page and submit to database route
 route::get('/donation/create','DonationController@create');              //product insert page
-route::post('/createaction','DonationController@productstore')->name('actionstore');          //submit button action to save into database
-
-// Gallery page route
-route::get('/gallery','GalleryController@index');
+route::post('/createaction','DonationController@productstore')->name('actionstore');          //submit button action to save product

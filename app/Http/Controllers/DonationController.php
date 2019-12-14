@@ -22,7 +22,7 @@ class DonationController extends Controller
 
       $product1->name = request('name');
       $product1->description = request('description');
-      $product1->status = false;
+      $product1->Available = false;
       $product1->save();
 
       return redirect()->route('donation.index');

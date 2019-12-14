@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->mediumText('description');
             // $table->integer('Product_pic_id');
             // $table->integer('user_id');
-            $table->boolean('status');
+            $table->boolean('Available');
             $table->timestamps();
         });
     }
