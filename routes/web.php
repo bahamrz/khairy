@@ -18,6 +18,8 @@ route::get('/signup','HomeController@signup');
 //Events page route
 route::get('/event','EventController@index');
 
+route::get('/event/create','eventController@create');   
+
 //donations page route
 route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where if you choose to change the route;
 
