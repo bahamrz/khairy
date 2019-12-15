@@ -19,25 +19,26 @@
   <section class="ftco-section">
     <div class="container">
       <div class="row">
-        <!-- add one -->
+        <!-- add one -->       
+         @foreach($Event as $Event)
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
             <a href="#" class="block-20" style="background-image: url('images/cleaning.png');">
             </a>
             <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
-                <div><a href="#">سبتمبر 10, 2018</a></div>
-                <div><a href="#">الاء</a></div>
+                <div><a href="#">{{$Event->Date}}</a></div>
+                <div><a href="#">{{$Event->Name}}</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
-              <h3 class="heading mb-4"><a href="#">اي حاجه</a></h3>
+              <h3 class="heading mb-4"><a href="#">{{$Event->Name}}</a></h3>
               <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> صباحا10:30-03:30 مسائا</span> <span><i class="icon-map-o"></i> ميدان الشهداء</span></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, similique. Aperiam earum molestias quibusdam ipsam dolores at laborum harum quis delectus. Delectus doloribus quo itaque amet possimus, modi aspernatur
-                doloremque?</p>
+              <p>{{$Event->Description}}</p>
               <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
             </div>
           </div>
         </div>
+         @endforeach
         <!-- add two -->
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
