@@ -14,7 +14,7 @@ class DonationController extends Controller
     }
 
     public function create(){
-      return view('donations.create');
+      return view('donation.create');
     }
 
     public function productstore(){
