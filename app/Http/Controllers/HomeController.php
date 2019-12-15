@@ -9,8 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $product = product::latest()->get();
-        return view('Home.index');
+        $product = product::latest()->take(3)->get();
+        return view('Home.index',compact('product'));
     }
     public function signin()
     {

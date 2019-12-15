@@ -81,89 +81,29 @@
           </div>
         </div>
     		<div class="row">
-          <!-- <div class="col-sm-3">            
-            <div class="item">
-	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/t1.jpg);"></a>
-		    					<div class="text p-3 p-md-4 text-right">
-		    						<h3><a href="#">اثاث مستعمل</a></h3>
-		    						<p>متوفر لدي بعض من الاثاث المستعمل يستطيع اخده من في حاجه له </p>
-		    						<span class="donation-time mb-3 d-block">ينتهي خلال 3 ايام</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">عدد الطلبات  (8)</span>
-		    					</div>
-                </div>
-	    				</div>
-           </div> -->
-           <!-- begin of test -->
-           @foreach($product as $product)
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('images/image_1.jpg');">
-            </a>
-            <div class="text p-4 d-block">
-              <div class="meta mb-3">
-                <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">{{$product->name}}</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-3 text-right"><a href="#">{{$product->name}}</a></h3>
-              <p class="text-right"> {{$product -> description}} </p>
-            </div>
-          </div>
-        </div>
-        @endforeach
-           <!-- End of Test -->
-           <div class="col-sm-3">            
-             <div class="item">
-              <div class="cause-entry">
-              <a href="#" class="img" style="background-image: url(images/t2.jpg);"></a>
-              <div class="text p-3 p-md-4 text-right">
-                <h3><a href="#">توصيل مجاني</a></h3>
-                <p>يمكنني التوصيل مجانا لجميع مرضى السكر و الكلى من و إلى المستشفى خلال فترة النهار </p>
-                <span class="donation-time mb-3 d-block"> غير محدود</span>
-                <div class="progress custom-progress-success">
-                <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">عدد الطلبات  (3)</span>
-              </div>
-            </div>
-          </div>
-       </div>
-       <div class="col-sm-3">            
-        <div class="item">
-        <div class="cause-entry">
-          <a href="#" class="img" style="background-image: url(images/cause-1.jpg);"></a>
-          <div class="text p-3 p-md-4 text-right">
-            <h3><a href="#">تدريس مجاني</a></h3>
-            <p>بأمكاني التدريس مجانا لطلبة من الصف الأول إلى الخامس في مادة الحساب لمن يحتاج</p>
-            <span class="donation-time mb-3 d-block">ساعة يوميا</span>
-            <div class="progress custom-progress-success">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <span class="fund-raised d-block">عدد الطلبات  (7)</span>
-          </div>
-        </div>
-  
-      </div>
-   </div>
-   <div class="col-sm-3">            <div class="item">
-    <div class="cause-entry">
-      <a href="#" class="img" style="background-image: url(images/t3.jpg);"></a>
-      <div class="text p-3 p-md-4 text-right">
-        <h3><a href="#">سيارة مستعملة</a></h3>
-        <p> لدي سيارة مستعملة يمكن تسليمها لمن بحاجه لها مع العلم انها تحتاج الى بعض الصيانة</p>
-        <span class="donation-time mb-3 d-block">ينتهي خلال 7 ايام</span>
-        <div class="progress custom-progress-success">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <span class="fund-raised d-block">عدد الطلبات  (1)</span>
-    </div>
 
-  </div>
-</div>                 
+    @foreach($product as $product)            
+        
+         <div class="col-sm-3 col-md-4 ftco-animate" style="">
+          <div class="item">
+            <div class="cause-entry align-self-stretch">
+            <a href="#" class="img" style="background-image: url('images/image_1.jpg');"></a>
+            <div class="text p-3 p-md-4 text-right">
+                <div><h3><a href="#">{{$product->name}}</a></h3></div>
+                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+              <p class="text-right"> {{$product -> description}} </p>
+              <span class="donation-time mb-3 d-block">ينتهي خلال 3 ايام</span>
+              <div class="progress custom-progress-success">
+		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+                    <span class="fund-raised d-block">عدد الطلبات  (8)</span>
+            </div>
+            </div>
+          </div>
+         </div>
+        
+    @endforeach
+          
 	    				
 	    				
     				</div>
