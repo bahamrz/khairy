@@ -89,7 +89,7 @@
             <div class="cause-entry align-self-stretch">
             <a href="#" class="img" style="background-image: url('images/image_1.jpg');"></a>
             <div class="text p-3 p-md-4 text-right">
-                <div><h3><a href="#">{{$product->name}}</a></h3></div>
+                <div><h3><a href="#">{{$product-> name}}</a></h3></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               <p class="text-right"> {{$product -> description}} </p>
               <span class="donation-time mb-3 d-block">ينتهي خلال 3 ايام</span>
@@ -103,14 +103,12 @@
          </div>
         
     @endforeach
-          
-	    				
-	    				
+      
     				</div>
     			</div>
     		</div>
     	</div>
-    </section>     -->
+    </section>
 
  
 
@@ -122,89 +120,27 @@
           </div>
         </div>
         <div class="row">
-        	<div class="col-md-4 d-flex ftco-animate">
+            @foreach ($Event as $Event)
+        	<div class="col-sm-4 col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
               <a href="#" class="block-20" style="background-image: url('images/event-1.jpg');">
               </a>
-              <div class="text p-4 d-block text-right">
+              
+              <div class="text p-3 p-md-4 d-block text-right">
               	<div class="meta mb-3">
-                  <div><a href="#">Sep. 10, 2018</a></div>
+                  <div><a href="#">{{$Event-> Date}}</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mb-4"><a href="#">زيارة أطفال الرعاية </a></h3>
+                <h3 class="heading mb-4"><a href="#">{{$Event-> Name}}</a></h3>
                 <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> الفرناج</span></p>
-                <p>زيارة الاطفال والوقوف على احتياجاتهم </p>
+                <p>{{$Event-> Description}}</p>
                 <p><a href="event">انظم إلى الحملة <i class="ion-ios-arrow-forward"></i></a></p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="#" class="block-20" style="background-image: url('images/event-2.jpg');">
-              </a>
-              <div class="text p-4 d-block text-right">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sep. 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mb-4"><a href="#">تبرعات للمهجرين</a></h3>
-                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> تاجوراء</span></p>
-                <p>تبرع من أجل العائلات المهجرة من منازلها</p>
-                <p><a href="event">إنضم للحملة <i class="ion-ios-arrow-forward"></i></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="#" class="block-20" style="background-image: url('images/event-3.jpg');">
-              </a>
-              <div class="text p-4 d-block text-right">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sep. 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mb-4"><a href="#">تبرعات للمهاجرين الغير شرعيين</a></h3>
-                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> غوط الشعال</span></p>
-                <p>العديد من الأفارقة يتسعملون ليبيا كمنفذ للهجرة الى اوروبا ساعد في إنقاذهم</p>
-                <p><a href="event">إنضم للحملة<i class="ion-ios-arrow-forward"></i></a></p>
-              </div>
-            </div>
-          </div>
+              @endforeach
         </div>
       </div>
     </section>
-		
-		<section class="ftco-section-3 img" style="background-image: url(img/bg_3.jpg);">
-    	<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row d-md-flex">
-    		<div class="col-md-6 d-flex ftco-animate">
-    			<div class="img img-2 align-self-stretch" style="background-image: url(img/contact-us.png);"></div>
-    		</div>
-    		<div class="col-md-6 volunteer pl-md-5 ftco-animate text-right">
-    			<h3 class="mb-3 text-right font">تواصل معنا</h3>
-    			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="الإسم*">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="البريد الإلكتروني*">
-            </div>
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="الرسالة*"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="إرسال" class="btn btn-white py-3 px-5 ">
-            </div>
-          </form>
-    		</div>    			
-    		</div>
-    	</div>
-    </section>
-
-
-
 @endsection

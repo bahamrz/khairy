@@ -33,13 +33,15 @@
                       <input type="checkbox" class="form-check-input" id="remember" name="remember"  {{ old('remember') ? 'checked' : '' }}>
                       <label class="form-check-label" for="remember" style="display: inline-block; width: 300px; text-align: right;" >تذكرني</label>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #05386B;" type="submit">تسجيل الدخول</button>
-                    <a class="d-block text-center mt-2 small" href="/register" >تسجيل حساب جديد</a>
-                    @if (Route::has('password.request'))
-                      <a class="btn btn-link" href="{{ route('password.request') }}">
-                          هل نسيت كلمة المرور؟
-                      </a>
-                    @endif
+                    <div class="container">
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #05386B;" type="submit">تسجيل الدخول</button>
+                        <a class="d-block text-center mt-2 small btn btn-primary" href="/register" >تسجيل حساب جديد</a>
+                        @if (Route::has('password.request'))
+                        <a class="btn btn-link d-block text-center mt-2 small" style="display: inline-block;" href="{{ route('password.request') }}">
+                        هل نسيت كلمة المرور؟
+                        </a>
+                        @endif
+                    </div>
                     <!-- <hr class="my-4">
                     <button class="btn btn-lg btn-danger btn-block text-uppercase" type="submit"> تسجيل الدخول بحساب قوقل <i class="fa fa-google mr-2"></i></button>
                     <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"> تسجيل الدخول بحساب فيسبوك<i class="fa fa-facebook-f mr-2"></i></button> -->
