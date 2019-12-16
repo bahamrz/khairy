@@ -18,19 +18,6 @@ class EventController extends Controller
           return view('Events.create');
        }
 
-<<<<<<< HEAD
-     //  public function Eventstore(){
-     //    $Event1 = new Event;
-
-      //   $Event1->name = request('name');
-      //   $Event1->Date = request('date');
-      //   $Event1->description = request('description');
-      //   $Event1->Place = request('Place');
-      //   $Event1->save();
-
-    //     return redirect()->route('Event.index');
-    //   }
-=======
      public function eventstore(){
 
         $Event1 = new Event;
@@ -43,6 +30,5 @@ class EventController extends Controller
 
         return redirect()->route('event.index');
         }
->>>>>>> 4839849b3d5e5f8a07fc8fd0c1aff6b3f09b9a04
 
 }
