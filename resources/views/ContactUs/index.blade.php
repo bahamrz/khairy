@@ -1,40 +1,36 @@
 @extends('Layout.main')
-@section('title','| تواصل معنا')
+@section('title','| يسعدنا تواصلك معنا')
 @section('content')
-<body style="background-color:#41B3A3">
-
- <!-- **** Contact Form Styled with CSS External File **** -->
- <div class="container contact-form" id="baha-contactfrm">
-      <div class= "contact-image" id="baha-contactimg">
-        <img src="images/contacts_us.png">
-      </div>
-      <form action="/Contactus" method="POST">
-      @csrf
-        <h3>تـواصل مـعنا</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                  <textarea class="form-control" id="bahaarea" placeholder="الرسالة*" required style="width:100%; height:300px; text-align:right" name="message"></textarea>
-                </div>
-              </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <input type="text" class="form-control " placeholder="الإسم*" required style="text-align:right" name="name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="البريد الإلكتروني*" required style="text-align:right" name="email">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="رقم الهاتف*" required style="text-align:right" name="phonenumber">
-            </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn-warning btn-lg btn-block" value="إرسال" >
-            </div>
+<body style="background-color:#5ac18a">
+    <section class="ftco-section-3 img" style="background-image: url(img/bg_3.jpg);">
+    	<div class="overlay"></div>
+    	<div class="container">
+    		<div class="row d-md-flex">
+          <div class="col-md-6 d-flex ftco-animate">
+            <div class="img img-2 align-self-stretch" style="background-image: url(img/contact-us.png);"></div>
           </div>
-        </div>
-      </form>
-</div>
-<!-- End of Contact Form Code -->
-
+    		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
+    			<h3 class="mb-3">تواصل معنا</h3>
+    			<form action="#" class="volunter-form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="اسمك">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="بريدك الأكتروني">
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="رقم هاتفك">
+            </div>
+            <div class="form-group">
+              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="اكتب رسالتك هنا"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="ارسل" class="btn btn-white py-3 px-5">
+            </div>
+          </form>
+    		</div>    			
+    		</div>
+    	</div>
+    </section>
 </body>
 @endsection

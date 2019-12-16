@@ -45,7 +45,7 @@ input[type=submit]:hover {
 
 <div class="container">
 
-    <form method="POST" action="{{route('actionstore')}}">
+    <form method="POST" action="{{route('action')}}">
 
         @csrf
 
@@ -55,8 +55,18 @@ input[type=submit]:hover {
 
       </div>
       <div>
+          <label >Event time</label>
+          <input type="date" name="date" placeholder="Event date">
+
+      </div>
+      <div>
+          <label >Event place</label>
+          <input type="text" name="Place" placeholder="Event Place">
+
+      </div>
+      <div>
             <label >Event Description</label>
-            <textarea name="Event" placeholder="Event Description"></textarea>
+            <textarea name="description" placeholder="Event Description"></textarea>
 
       </div>
       <div>
