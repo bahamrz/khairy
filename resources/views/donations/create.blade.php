@@ -59,12 +59,20 @@ input[type=submit]:hover {
             <textarea name="description" placeholder="product Description"></textarea>
 
       </div>
+
+      <div>
+        <select class="" name="category">
+          @foreach($category as $category)
+          <option value="{{ $category->id}}"> {{ $category->name }}</option>
+          @endforeach
+        </select>
+
+      </div>
       <div>
 
             <input type="submit" value="Make product">
 
       </div>
-
     </form>
 
  </div>

@@ -28,4 +28,4 @@ route::get('/donation/create','DonationController@create');              //produ
 route::post('/createaction','DonationController@productstore')->name('actionstore');          //submit button action to save product
 
 route::get('/category/create','CategoryController@create');
-route::post('')
+route::post('/newcategory','CategoryController@store')->name('newcategory');
