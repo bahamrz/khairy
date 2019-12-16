@@ -39,5 +39,9 @@ class HomeController extends Controller
         // ]);
         return view('Home.view',['product'=>product::find($id)]);
     }
+    public function viewe($id)
+    {
+        return view('Home.viewe',['event'=>Event::find($id)]);    
+    }
 
 }

@@ -132,7 +132,7 @@
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mb-4"><a href="#">{{$Event-> Name}}</a></h3>
+                <h3 class="heading mb-4"><a href="{{url("/viewe/$Event->id")}}">{{$Event-> Name}}</a></h3>
                 <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> الفرناج</span></p>
                 <p class="text-truncate" style="display:block ">{{$Event-> Description}}</p>
                 <p><a href="event">انظم إلى الحملة <i class="ion-ios-arrow-forward"></i></a></p>

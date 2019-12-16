@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
+use App\category;
 
 class DonationController extends Controller
 {
@@ -14,7 +15,8 @@ class DonationController extends Controller
     }
 
     public function create(){
-      return view('donations.create');
+      $category = category::all();
+      return view('donations.create',compact('category'));
     }
 
     public function productstore(){
@@ -22,7 +24,8 @@ class DonationController extends Controller
 
       $product1->name = request('name');
       $product1->description = request('description');
-      $product1->status = false;
+      $product1->Available = false;
+      $product1->category_id = request('category');
       $product1->save();
 
       return redirect()->route('donation.index');
