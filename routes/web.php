@@ -1,8 +1,9 @@
 <?php
-
+use Carbon\Carbon;// باش تتعرب التواريخ
+Carbon::setLocale('ar_LY'); // باش تتعرب التواريخ
 // Home page route
 Route::get('/','HomeController@index');
-// Route::get('/view',);
+Route::get('/view/{id}','HomeController@view');
 // About page route
 route::get('/aboutus','AboutusController@index');
 

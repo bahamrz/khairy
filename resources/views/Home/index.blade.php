@@ -84,14 +84,14 @@
 
     @foreach($product as $product)            
         
-         <div class="col-sm-3 col-md-4 ftco-animate" style="">
+         <div class="col-sm-3 col-md-4 ftco-animate " style="">
           <div class="item">
             <div class="cause-entry align-self-stretch">
             <a href="#" class="img" style="background-image: url('images/image_1.jpg');"></a>
             <div class="text p-3 p-md-4 text-right">
-                <div><h3><a href="#">{{$product-> name}}</a></h3></div>
+                <div><h3><a href="{{ url("/view/$product->id") }}">{{$product-> name}}</a></h3></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              <p class="text-right"> {{$product -> description}} </p>
+              <p class="text-truncate text-right" style="display:block "> {{$product -> description}} </p>
               <span class="donation-time mb-3 d-block">ينتهي خلال 3 ايام</span>
               <div class="progress custom-progress-success">
 		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
@@ -134,7 +134,7 @@
                 </div>
                 <h3 class="heading mb-4"><a href="#">{{$Event-> Name}}</a></h3>
                 <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> الفرناج</span></p>
-                <p>{{$Event-> Description}}</p>
+                <p class="text-truncate" style="display:block ">{{$Event-> Description}}</p>
                 <p><a href="event">انظم إلى الحملة <i class="ion-ios-arrow-forward"></i></a></p>
               </div>
             </div>

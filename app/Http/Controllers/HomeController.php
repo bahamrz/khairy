@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        // $this->middleware('auth'); //Protects entire Controller
     }
 
     /**
@@ -32,4 +32,12 @@ class HomeController extends Controller
         return view('Home.index',compact('product'),compact('Event'));
 
     }
+    public function view($id)
+    {
+        // return view('products.show', [
+        //     'product' => Product::with('category')->find($id)
+        // ]);
+        return view('Home.view',['product'=>product::find($id)]);
+    }
+
 }
