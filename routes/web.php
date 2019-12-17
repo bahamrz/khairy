@@ -32,6 +32,9 @@ route::post('/createaction','DonationController@productstore')->name('actionstor
 route::get('/category/create','CategoryController@create');
 route::post('/newcategory','CategoryController@store')->name('newcategory');
 
+route::get('/productstatus/create','StatusController@create');
+route::post('/newstatus','StatusController@store')->name('newstatus');
+
 // Gallery page route
 route::get('/gallery','GalleryController@index');
 Auth::routes();

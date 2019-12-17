@@ -69,6 +69,14 @@ input[type=submit]:hover {
 
       </div>
       <div>
+        <select class="" name="category">
+          @foreach($status as $status)
+          <option value="{{ $status->id}}"> {{ $status->name }}</option>
+          @endforeach
+        </select>
+
+      </div>
+      <div>
 
             <input type="submit" value="Make product">
 

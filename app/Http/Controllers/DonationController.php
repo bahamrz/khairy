@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Product;
 use App\category;
+use App\product_status;
+
 
 class DonationController extends Controller
 {
@@ -16,7 +18,8 @@ class DonationController extends Controller
 
     public function create(){
       $category = category::all();
-      return view('donations.create',compact('category'));
+      $status = product_status::all();
+      return view('donations.create',compact('category','status'));
     }
 
     public function productstore(){
