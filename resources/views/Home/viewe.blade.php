@@ -1,12 +1,12 @@
 @extends('Layout.main') 
-@section('title', '| عرض التبرعات ')
+@section('title', '| عرض الحملات ')
 
 @section('content')
 <body style="background-color:darkgreen; direction:rtl;">
 <div class="container text-right " style="margin-top:15%; margin-bottom:10%; background-color:black; " >
         <div>
-          <h1 style="color:white;" class="text-right">{{$product-> name}}</h1>
-          <p class="lead"><i class="far fa-calendar-alt"></i> {{$product-> updated_at-> diffforhumans()}} </p>
+          <h1 style="color:white;" class="text-right">{{$event-> Name}}</h1>
+          <p class="lead"><i class="far fa-calendar-alt"></i> {{$event-> updated_at-> diffforhumans()}} </p>
         </div>
         <div class="row">
             
@@ -18,12 +18,12 @@
                 </div>
                 <div class="card">
                     <div class="card-body">
-                      {{$product-> created_at-> diffforhumans()}}
+                      {{$event-> created_at-> diffforhumans()}}
                     </div>
                   </div>
                   <div class="card">
                       <div class="card-body">
-                          {{$product-> description}}
+                          {{$event-> Description}}
                         </div>
                     </div>
                   </div>
