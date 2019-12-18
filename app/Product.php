@@ -11,6 +11,6 @@ class Product extends Model
     return $this->belongsTo('App/Category');
   }
   public function status(){
-    return $this->belongsTo('App/product_status','status_id');
+    return $this->belongsTo('App/product_status');
   }
 }

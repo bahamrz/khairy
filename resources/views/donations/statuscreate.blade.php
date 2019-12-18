@@ -9,7 +9,7 @@
 <br>
 
 <div class="container">
-    <h2>Add new Category</h2>
+    <h2>Add new product_status</h2>
 
     <form action="{{route('newstatus')}}" method="POST">
         @csrf

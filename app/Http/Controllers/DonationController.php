@@ -23,14 +23,56 @@ class DonationController extends Controller
     }
 
     public function productstore(){
-      $product1 = new Product;
 
-      $product1->name = request('name');
-      $product1->description = request('description');
-      $product1->Available = false;
-      $product1->category_id = request('category');
-      $product1->save();
+      $imagePath = request()->file('image')->store('public');
+
+      $product = new Product;
+      $product->name = request('name');
+      $product->description = request('description');
+      $product->Available = false;
+      $product->status_id = request('status');
+      $product->category_id = request('category');
+      $product->image = str_replace('public/', '', $imagePath);
+      $product->save();
+
 
       return redirect()->route('donation.index');
     }
+
+    public function edit($id)
+    {
+        return view('Donations.edit',  [
+            'category' => Category::all(),
+            'product' => Product::find($id),
+            'status' => product_status::all()
+        ]);
+    }
+
+    public function update($id)
+    {
+        $product = Product::find($id);
+
+        if (request()->file('image')) {
+
+            $newImagePath = request()->file('image')->store('public');
+
+            $product->image = str_replace('public/', '', $newImagePath);
+        }
+
+        $product->name = request('name');
+        $product->description = request('description');
+        $product->Available = false;
+        $product->status_id = request('status');
+        $product->category_id = request('category');
+        $product->save();
+
+        return redirect('/donation');
+    }
+    public function destroy($id)
+    {
+        Product::find($id)->delete();
+
+        return redirect('/donation');
+    }
+
 }
