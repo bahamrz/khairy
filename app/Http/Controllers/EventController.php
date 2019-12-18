@@ -9,7 +9,7 @@ class EventController extends Controller
 {
     public function index() {
 
-        $Event = Event::latest()->get();
+        $Event = Event::pagination(1);
         return view('Events.index',compact('Event'));
 
     }

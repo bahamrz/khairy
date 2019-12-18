@@ -10,7 +10,7 @@
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">الخير بالجميع وللجميع</h1>
             <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">مودة  | تعاون |  عطاء </p>
 
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="/signin" class="btn btn-white btn-outline-white px-4 py-3 "><span class="icon-person mr-2"></span>أنظم الان</a></p>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="/login" class="btn btn-white btn-outline-white px-4 py-3 "><span class="icon-person mr-2"></span>أنظم الان</a></p>
           </div>
         </div>
       </div>
@@ -82,14 +82,14 @@
         </div>
     		<div class="row">
 
-    @foreach($product as $product)            
-        
-         <div class="col-sm-3 col-md-4 ftco-animate " style="">
-          <div class="item">
-            <div class="cause-entry align-self-stretch">
-            <a href="#" class="img" style="background-image: url('images/image_1.jpg');"></a>
-            <div class="text p-3 p-md-4 text-right">
-                <div><h3><a href="{{ url("/view/$product->id") }}">{{$product-> name}}</a></h3></div>
+    @foreach($product as $product)
+
+         <div class="col-sm-3 col-md-4 d-flex ftco-animate " >
+          {{-- <div class="item"> --}}
+            <div class="blog-entry align-self-stretch">
+            <a href="#" class="block-20" style="background-image: url('images/image_1.jpg');"></a>
+            <div class="text p-3 p-md-4 d-block text-right">
+                <div class="heading mb-4"><h3><a href="{{ url("/view/$product->id") }}">{{$product-> name}}</a></h3></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               <p class="text-truncate text-right" style="display:block "> {{$product -> description}} </p>
               <span class="donation-time mb-3 d-block">ينتهي خلال 3 ايام</span>
@@ -99,9 +99,8 @@
                     <span class="fund-raised d-block">عدد الطلبات  (8)</span>
             </div>
             </div>
-          </div>
+          {{-- </div> --}}
          </div>
-        
     @endforeach
       
     				</div>
@@ -125,7 +124,6 @@
           	<div class="blog-entry align-self-stretch">
               <a href="#" class="block-20" style="background-image: url('images/event-1.jpg');">
               </a>
-              
               <div class="text p-3 p-md-4 d-block text-right">
               	<div class="meta mb-3">
                   <div><a href="#">{{$Event-> Date}}</a></div>

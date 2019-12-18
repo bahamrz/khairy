@@ -1,6 +1,5 @@
 @extends('Layout.main') 
 @section('title', '| عرض التبرعات ')
-
 @section('content')
 <body style="background-color:darkgreen; direction:rtl;">
 <div class="container text-right " style="margin-top:15%; margin-bottom:10%; background-color:black; " >
@@ -9,7 +8,6 @@
           <p class="lead"><i class="far fa-calendar-alt"></i> {{$product-> updated_at-> diffforhumans()}} </p>
         </div>
         <div class="row">
-            
           <div class="col-md-6">
                 <div class="card">
                     <div class="card-body"><i class="fas fa-user"></i>
