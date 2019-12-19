@@ -16,14 +16,17 @@ route::get('/Signin','SigninController@index');
 route::get('/Signup','SignupController@index');
 
 //Events page route
-route::get('/Event','EventController@index');
+route::get('/event','EventController@index')->name('event.index');  
+
+route::get('/event/create','EventController@create');   
+route::post('/createevent','EventController@eventstore')->name('action');
 
 //donations page route
 route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where;
 
 //product insert page and submit to database route
-route::get('/donation/create','ProductController@create');              //product insert page
-route::post('/createaction','ProductController@productstore');          //submit button action to save into database
+route::get('/donation/create','DonationController@create');              //product insert page
+route::post('/createaction','DonationController@productstore')->name('actymionstore');    //submit button action to save into database
 
 // Gallery page route
 route::get('/Gallery','GalleryController@index');
