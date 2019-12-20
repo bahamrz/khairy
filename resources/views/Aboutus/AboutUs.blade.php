@@ -1,12 +1,19 @@
 @extends('Layout.main')
 
 @section('content')
-<body style="background-color:#41B3A3">
-<!-- SignUP Page -->
-     <!-- Ethics Image -->
-     <div class=" static-slider10" id="kh_ethics" style="background-image:url('images/kh_ethics.png');"></div>
-     <div class="bg-light py-5 service-11">
+<body style="background-color:black">
+<section class="ftco-section-w img" style="background-image: url(images/kh_ethics.png); background-size: cover;">
+    	<div class="overlay"></div>
+    	<div class="container">
+    		<div class="row d-md-flex">
+          <div class="col-md-12 d-flex ftco-animate">
+          </div>
+    		<div class="col-md-12 volunteer pl-md-5 ftco-animate">
+    	
+            <div class=" py-5 service-11">
             <div class="container">
+            <br> <br>
+            <h1 class="mb-3 bread text-center">كيف تستعمل خيري</h1>
                 <div class="row">
                     <div class="col-md-4 wrap-service11-box">
                         <div class="card card-shadow border-0 mb-4">
@@ -43,8 +50,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-<!-- End of testing -->
+    		</div>    			
+    		</div>
+    	</div>
+    </section>
+
  
 </body>
 

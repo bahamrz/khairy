@@ -29,11 +29,11 @@
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <style>
-        html, body, h1, h2, h3, h4, h5, h6 
-        {
-          font-family: 'Tajawal', sans-serif !important; 
-        }
-        </style>
+      html, body, h1, h2, h3, h4, h5, h6 
+      {
+        font-family: 'Tajawal', sans-serif !important; 
+      }
+      </style>
   </head>
   <body>
 <!-- ******* NavBar ******* -->
@@ -47,11 +47,11 @@
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav justify-content-end">
           <li class="nav-item active"><a href="/" class="nav-link">الرئيسية</a></li>
-          <li class="nav-item"><a href="/donation" class="nav-link">التبرعات</a></li>
-          <li class="nav-item"><a href="/event" class="nav-link">الحملات</a></li>
-          <li class="nav-item"><a href="/gallery" class="nav-link">استوديو صور</a></li>
-          <li class="nav-item"><a href="/aboutus" class="nav-link">كيف تستعمل خيري</a></li>
-          <li class="nav-item"><a href="/contactus" class="nav-link">تواصل معنا</a></li>
+          <li class="nav-item"><a href="donation" class="nav-link">التبرعات</a></li>
+          <li class="nav-item"><a href="event" class="nav-link">الحملات</a></li>
+          <li class="nav-item"><a href="gallery" class="nav-link">استوديو صور</a></li>
+          <li class="nav-item"><a href="aboutus" class="nav-link">كيف تستعمل خيري</a></li>
+          <li class="nav-item"><a href="contactus" class="nav-link">تواصل معنا</a></li>
       </ul>
       <ul class="nav navbar-nav flex-row justify-content-between mr-auto  " >
                         <!-- Authentication Links -->
@@ -61,7 +61,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('التسجيل') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('تسجيل حساب جديد') }}</a>
                                 </li>
                             @endif
                         @else
@@ -96,73 +96,29 @@
 
 
  <!-- footer starts -->
- <footer class="ftco-footer ftco-section img">
+ <footer class="ftco-footer ">
     <div class="overlay"></div>
     <div class="container">
       <div class="row mb-5">
-        <div class="col-md-3">
+        <div class="col-md-6">
           <div class="ftco-footer-widget mb-4 text-right">
-            <h2 class="ftco-heading-2"style="text-align:right;">مــن نــحــن</h2>
-            <p>منصه خيري تم انشاءها من قبل شباب ليبيين في مخيم تيك كامب المقدم من شركه تطوير وهيا منصه غير ربحيه تهدف الي </p>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+            <h2 class="ftco-heading-1"style="text-align:right;"> مشروع خيري</h2>
+            <p>منصه  غير ربحية تقدم خدماتها للجميع ويمكن أن يشارك فيها الجميع  </p>
+            <p>مودة | تعاون | عطاء </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ftco-footer-widget mb-4 text-right">
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
               <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-youtube"></span></a></li>
             </ul>
+            
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="ftco-footer-widget mb-4 text-right">
-            <h2 class="ftco-heading-2">اكبر الحملات الخيريه</h2>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">حمله إيواء</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> فبراير 12, 2020</a></div>
-                  <div><a href="#"><span class="icon-person"></span> جمعية الهام</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/cleaning.png);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">حمله تنظيف</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> براير 12, 2020</a></div>
-                  <div><a href="#"><span class="icon-person"></span> جمعيه شباب</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="ftco-footer-widget mb-4 ml-md-4 text-right">
-            <h2 class="ftco-heading-2">صفحات رئيسيه</h2>
-            <ul class="list-unstyled">
-                <li><a href="/" class="py-2 d-block">رئيسيه</a></li>
-                <li><a href="donation" class="py-2 d-block">تبرعات</a></li>
-                <li><a href="event" class="py-2 d-block">حملات خيريه</a></li>
-                <li><a href="aboutus" class="py-2 d-block">كيف استعمل خيري؟</a></li>
-                <li><a href="gallery" class="py-2 d-block">ألبوم الصور</a></li>
-                <li><a href="contactus" class="py-2 d-block">تواصل معنا</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="ftco-footer-widget mb-4 text-right">
-            <h2 class="ftco-heading-2"> للتواصل معنا  </h2>
-            <div class="block-23 mb-3">
-              <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text">حي الاندلس \ طرابلس \ ليبيا \ خلف مش عارف شني</span></li>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0000000 92 218+</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@khairy.com</span></a></li>
-              </ul>
-            </div>
-          </div>
+        
         </div>
       </div>
       <div class="row">
@@ -170,7 +126,7 @@
           <p>
             Copyright &copy;<script>
               document.write(new Date().getFullYear());
-            </script> All rights reserved | This website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Tec-Camp khairy group</a>
+            </script> All rights reserved  <i class="icon-share" aria-hidden="true"></i>  <a href="#" target="_blank"> Khairy Group | Tec Camp Tripoli</a>
           </p>
         </div>
       </div>
@@ -184,7 +140,6 @@
 <!-- End of FOOTER TEST -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://kit.fontawesome.com/799c85944e.js" crossorigin="anonymous"></script> {{-- Icons --}}
     <script src="{{ asset('js/jquery.min.js')}}"></script>
     <script src="{{ asset('js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{ asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
