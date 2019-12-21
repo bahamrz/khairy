@@ -28,25 +28,62 @@
     <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 
+        {
+          font-family: 'Tajawal', sans-serif !important; 
+        }
+        </style>
   </head>
   <body>
 <!-- ******* NavBar ******* -->
 <!-- nav -->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar align-items-rghit">
   <div class="container">
-      <a class="navbar-brand" href="signin">تسجيل الدخول</a>
+      {{-- <a class="navbar-brand" href="signin">تسجيل الدخول</a> --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> 
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav justify-content-end">
           <li class="nav-item active"><a href="/" class="nav-link">الرئيسية</a></li>
-          <li class="nav-item"><a href="donation" class="nav-link">التبرعات</a></li>
-          <li class="nav-item"><a href="event" class="nav-link">الحملات</a></li>
-          <li class="nav-item"><a href="gallery" class="nav-link">استوديو صور</a></li>
-          <li class="nav-item"><a href="aboutus" class="nav-link">كيف تستعمل خيري</a></li>
-          <li class="nav-item"><a href="contactus" class="nav-link">تواصل معنا</a></li>
+          <li class="nav-item"><a href="/donation" class="nav-link">التبرعات</a></li>
+          <li class="nav-item"><a href="/event" class="nav-link">الحملات</a></li>
+          <li class="nav-item"><a href="/gallery" class="nav-link">استوديو صور</a></li>
+          <li class="nav-item"><a href="/aboutus" class="nav-link">كيف تستعمل خيري</a></li>
+          <li class="nav-item"><a href="/contactus" class="nav-link">تواصل معنا</a></li>
       </ul>
+      <ul class="nav navbar-nav flex-row justify-content-between mr-auto  " >
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('التسجيل') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
     </div>
   </div>
 </nav>
@@ -147,6 +184,7 @@
 <!-- End of FOOTER TEST -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/799c85944e.js" crossorigin="anonymous"></script> {{-- Icons --}}
     <script src="{{ asset('js/jquery.min.js')}}"></script>
     <script src="{{ asset('js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{ asset('js/jquery-migrate-3.0.1.min.js')}}"></script>

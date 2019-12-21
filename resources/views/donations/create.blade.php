@@ -45,7 +45,7 @@ input[type=submit]:hover {
 
 <div class="container">
 
-    <form method="POST" action="{{route('actionstore')}}">
+    <form method="POST" enctype="multipart/form-data" action="{{route('actionstore')}}">
 
         @csrf
 
@@ -59,12 +59,32 @@ input[type=submit]:hover {
             <textarea name="description" placeholder="product Description"></textarea>
 
       </div>
+
+      <div>
+        <select class="" name="category">
+          @foreach($category as $category)
+          <option value="{{ $category->id}}"> {{ $category->name }}</option>
+          @endforeach
+        </select>
+
+      </div>
+      <div>
+        <select class="" name="status">
+          @foreach($status as $status)
+          <option value="{{ $status->id}}"> {{ $status->name }}</option>
+          @endforeach
+        </select>
+
+      </div>
+      <div>
+              <label for="image" class="col-2 col-form-label">Image</label>
+              <input type="file" id="image" name="image" class="form-control">
+      </div>
       <div>
 
             <input type="submit" value="Make product">
 
       </div>
-
     </form>
 
  </div>

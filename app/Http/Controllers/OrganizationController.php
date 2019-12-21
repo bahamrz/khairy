@@ -14,11 +14,11 @@ class OrganizationController extends Controller
 
   public function store(){
 
-    $org= new Organization;
-    $org->Org_Name='Tatweer';
-    $org->Org_Desc='Is orgnization for development';
+    $org = new Organization;
+    $org->Org_Name = 'Tatweer';
+    $org->Org_Desc = 'Is orgnization for development';
 
-    
+
   }
 
   public function create(){
