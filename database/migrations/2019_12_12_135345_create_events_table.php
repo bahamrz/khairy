@@ -18,7 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('Name');
             $table->date('Date');
             $table->text('Description');
-           // $table->bigIncrements('Org_id');            
+            $table->integer('organizations_id');            
            // $table->pic('Name');
             $table->string('Place');
             $table->timestamps();

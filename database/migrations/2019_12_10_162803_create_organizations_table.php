@@ -18,7 +18,7 @@ class CreateOrganizationsTable extends Migration
             $table->bigIncrements('Org_Id');
             $table->string('Org_Name');
             $table->mediumText('Org_Desc');
-            $table->string('Org_Logo')->nullable();
+           // $table->string('Org_Logo')->nullable();
             $table->timestamps();
         });
     }

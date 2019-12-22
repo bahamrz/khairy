@@ -23,7 +23,7 @@ route::get('/contactus','ContactusController@index');
 route::get('/event','EventController@index')->name('event.index');
 
 route::get('/event/create','EventController@create');
-route::post('/createevent','EventController@eventstore')->name('action');
+route::post('/createevent','EventController@eventstore')->name('newevent');
 
 //donations page route
 route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where if you choose to change the route;
@@ -49,3 +49,10 @@ route::get('/gallery','GalleryController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// organization page route
+route::get('/organization','OrganizationController@index');
+route::get('/organization/create','OrganizationController@create');
+route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
+
+
