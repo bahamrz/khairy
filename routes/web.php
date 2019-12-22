@@ -45,17 +45,10 @@ Route::delete('/donation/{id}','DonationController@destroy'); // delete a produc
 
 
 // Gallery page route
-<<<<<<< HEAD
-route::get('/Gallery','GalleryController@index');
-
-route::get('/Organization','OrganizationController@index');
-route::post('/Organization/createOrg','OrganizationController@orgstore')->name('storeInDB');
-route::get('/Organization/create','OrganizationController@create'); 
-
-
-=======
 route::get('/gallery','GalleryController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> cf0dff0b7a131d1f41102796cff15e08252a44d7
+
+//User Profile page
+route::get('/user','UserProfileController@index');
