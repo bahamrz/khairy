@@ -13,4 +13,7 @@ class Product extends Model
   public function status(){
     return $this->belongsTo('App/product_status');
   }
+  public function users(){
+    return $this->belongsToMany('App/users','donation_resarvations');
+  }
 }

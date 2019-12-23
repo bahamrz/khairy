@@ -4,8 +4,8 @@ Carbon::setLocale('ar_LY'); // باش تتعرب التواريخ
 
 // Home page route
 Route::get('/','HomeController@index');
-Route::get('/view/{id}','HomeController@view');
-Route::get('/viewe/{id}','HomeController@viewe');
+Route::get('/view/{id}','HomeController@view')->middleware('auth');
+Route::get('/viewe/{id}','HomeController@viewe')->middleware('auth');
 
 // About page route
 route::get('/aboutus','AboutusController@index');

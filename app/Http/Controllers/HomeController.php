@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
+use App\product;
 use App\Event;
 
 class HomeController extends Controller
@@ -25,12 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // return Redirect::to("/")->withSuccess('Success order');
         // return "hi";
         // return view('home');
         $product = product::latest()->take(3)->get();
         $Event = Event::latest()->take(3)->get();
         return view('Home.index',compact('product'),compact('Event'));
-
     }
     public function view($id)
     {
@@ -41,7 +41,6 @@ class HomeController extends Controller
     }
     public function viewe($id)
     {
-        return view('Home.viewe',['event'=>Event::find($id)]);    
+        return view('Home.viewe',['event'=>Event::find($id)]);
     }
-
 }

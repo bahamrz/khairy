@@ -8,6 +8,9 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+  public function products(){
+    return $this->belongsToMany('App/products');
+  }
     use Notifiable;
 
     /**
