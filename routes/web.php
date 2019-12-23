@@ -8,11 +8,11 @@ Route::get('/view/{id}','HomeController@view')->middleware('auth');
 Route::get('/viewe/{id}','HomeController@viewe')->middleware('auth');
 
 // About page route
-route::get('/aboutus','AboutusController@index');
+route::get('/Aboutus','AboutusController@index');
 
 // Contact Us page route
-route::get('/contactus','ContactusController@index');
-
+route::get('/Contactus','ContactusController@index');
+route::post('/Contactus','ContactusController@create');
 //SignIn page route
 // route::get('/signin','HomeController@signin');
 
@@ -23,10 +23,10 @@ route::get('/contactus','ContactusController@index');
 route::get('/event','EventController@index')->name('event.index');
 
 route::get('/event/create','EventController@create');
-route::post('/createevent','EventController@eventstore')->name('action');
+route::post('/createevent','EventController@eventstore')->name('newevent');
 
 //donations page route
-route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where if you choose to change the route;
+route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where;
 
 //product insert page and submit to database route
 route::get('/donation/create','DonationController@create');              //product insert page
@@ -49,3 +49,15 @@ route::get('/gallery','GalleryController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+<<<<<<< HEAD
+// organization page route
+route::get('/organization','OrganizationController@index');
+route::get('/organization/create','OrganizationController@create');
+route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
+
+
+=======
+//User Profile page
+route::get('/user','UserProfileController@index');
+>>>>>>> 98e580053791046146b6b5269579efe185d88395

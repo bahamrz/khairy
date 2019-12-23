@@ -41,37 +41,27 @@ input[type=submit]:hover {
 </head>
 <body>
 
-<h1>Create New Event</h1>
+<h1>Create New product</h1>
 
 <div class="container">
 
-    <form method="POST" action="{{route('newevent')}}">
+    <form method="POST" action="{{route('storeInDB')}}">
 
         @csrf
 
        <div>
-          <label >Event Name</label>
-          <input type="text" name="name" placeholder="Event Name">
+          <label >Organization Name</label>
+          <input type="text" name="name" placeholder=" Organization Name">
 
       </div>
       <div>
-          <label >Event time</label>
-          <input type="date" name="date" placeholder="Event date">
-
-      </div>
-      <div>
-          <label >Event place</label>
-          <input type="text" name="Place" placeholder="Event Place">
-
-      </div>
-      <div>
-            <label >Event Description</label>
-            <textarea name="description" placeholder="Event Description"></textarea>
-
+            <label >Organization Description</label>
+            <textarea name="description" placeholder="Organization Description"></textarea>
+            <label >still to add logo and contacts in DB</label>
       </div>
       <div>
 
-            <input type="submit" value="Make Event">
+            <input type="submit" value="Add Orginzation">
 
       </div>
 
