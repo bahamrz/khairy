@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">الخير بالجميع وللجميع</h1>
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"> الخير للجميع وبالجميع</h1>
             <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">مودة  | تعاون |  عطاء </p>
 
             <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="/login" class="btn btn-white btn-outline-white px-4 py-3 "><span class="icon-person mr-2"></span>أنظم الان</a></p>

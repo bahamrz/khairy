@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\category;
 use App\product_status;
-
+use Auth;
 
 class DonationController extends Controller
 {
@@ -25,14 +25,16 @@ class DonationController extends Controller
     public function productstore(){
 
       $imagePath = request()->file('image')->store('public');
+      $userid = Auth::id();
 
       $product = new Product;
       $product->name = request('name');
+      $product->user_id = $userid;
       $product->description = request('description');
       $product->Available = false;
       $product->status_id = request('status');
       $product->category_id = request('category');
-      $product->image = str_replace('public/', '', $imagePath);
+      $product->image = $imagePath;
       $product->save();
 
 
