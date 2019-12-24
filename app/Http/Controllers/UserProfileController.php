@@ -8,9 +8,10 @@ class UserProfileController extends Controller
 {
 public function index(){
 
-    $userprod= auth()->user()->Product;
+    $userprod= auth()->user()->products;
+  $userprodCount=auth()->user()->products()->count();
 
-    return view('UserProfile.userProfile',compact('userprod'));
+    return view('UserProfile.userProfile', compact('userprod','userprodCount'));
 }
 
 

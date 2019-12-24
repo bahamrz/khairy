@@ -54,7 +54,7 @@
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10">
-            <h1>User name</h1></div>
+            <h1>{{auth()->user()->name}}</h1></div>
         <div class="col-sm-2">
             <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
         </div>
@@ -117,16 +117,24 @@
                                 </tr>
                             </thead>
                             <tbody id="items">
+                            @foreach($userprod as $product)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td>{{$userprodCount}}</td> 
+                                    <td>{{$product->name}}</td>
+                                    <td>{{$product->description}}</td>
+                                    <td>{{$product->status->name}}</td>
+                                    <td>{{$product->category->name}}</td>
+                                    <td><div class="col-xs-12">
+                                <br>
+                                <button class="btn  btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Edit</button>
+                                <button type="button" class="btn btn-danger"></i> Delete</button>
+                                
+                                </div>
+                                </td>
+                                    
                                     <td>Table cell</td>
                                 </tr>
-                                
+                            @endforeach
                             </tbody>
                         </table>
                         <hr>
@@ -141,25 +149,7 @@
                     <hr>
 
                 </div>
-                @foreach($userprod as $product)
-        <div class="col-md-4 d-flex ftco-animate text-right">
-          <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('{{ asset('../storage/app/public/$product->image')}}');">
-            </a>
-            <div class="text p-4 d-block">
-              <div class="meta mb-3">
-                <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">{{$product->name}}</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-3 text-right"><a href="/view/{{$product->id}}">{{$product->name}}</a></h3>
-              <p class="text-right"> {{$product -> description}} </p>
-              <p><a class="bg-light pl-5" href="#">تعديل </a>
-              <a class="bg-light pl-5" href="/view/{{$product->id}}"> تفاصيل</a></p>
-            </div>
-          </div>
-        </div>
-        @endforeach
+                
                 <div class="tab-pane" id="editAccount">
 
                     <hr>
