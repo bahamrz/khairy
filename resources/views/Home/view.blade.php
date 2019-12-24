@@ -30,7 +30,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body rounded border border-light text-right">
-                              <img src="{{ asset($product->image) }}" alt="..." class="img-thumbnail">
+                              <img src="{{ asset(Storage::url($product->image))}}" alt="..." class="img-thumbnail">
                             </div>
                         </div>
                       </div>
