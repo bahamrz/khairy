@@ -1,10 +1,12 @@
 <?php
 use Carbon\Carbon;// باش تتعرب التواريخ
 Carbon::setLocale('ar_LY'); // باش تتعرب التواريخ
+
 // Home page route
 Route::get('/','HomeController@index');
 Route::get('/view/{id}','HomeController@view');
 Route::get('/viewe/{id}','HomeController@viewe');
+
 // About page route
 route::get('/aboutus','AboutusController@index');
 
@@ -32,6 +34,15 @@ route::post('/createaction','DonationController@productstore')->name('actionstor
 
 route::get('/category/create','CategoryController@create');
 route::post('/newcategory','CategoryController@store')->name('newcategory');
+
+route::get('/productstatus/create','StatusController@create');
+route::post('/newstatus','StatusController@store')->name('newstatus');
+
+route::get('/donation/{id}/edit','DonationController@edit');   //product edit (page)
+route::patch('/donation/{id}','DonationController@update');     //product update (action_button)
+Route::delete('/donation/{id}','DonationController@destroy'); // delete a product
+
+
 
 // Gallery page route
 route::get('/gallery','GalleryController@index');

@@ -41,29 +41,30 @@ input[type=submit]:hover {
 </head>
 <body>
 
-<h1>Create New product</h1>
+<h1>edit product</h1>
 
 <div class="container">
 
-    <form method="POST" enctype="multipart/form-data" action="{{route('actionstore')}}">
+    <form method="POST" enctype="multipart/form-data" action="{{url('/donation/' . $product->id)}}">
 
         @csrf
+          @method('PATCH')
 
        <div>
           <label >product Name</label>
-          <input type="text" name="name" placeholder="product Name">
+          <input type="text" name="name" value="{{$product->name}}" placeholder="product Name">
 
       </div>
       <div>
             <label >product Description</label>
-            <textarea name="description" placeholder="product Description"></textarea>
+            <textarea name="description" placeholder="product Description">{{$product->description}}</textarea>
 
       </div>
 
       <div>
         <select class="" name="category">
           @foreach($category as $category)
-          <option value="{{ $category->id}}"> {{ $category->name }}</option>
+          <option {{ $category->id == $product->category_id ? 'selected' : '' }} value="{{ $category->id}}"> {{ $category->name }}</option>
           @endforeach
         </select>
 
@@ -71,7 +72,7 @@ input[type=submit]:hover {
       <div>
         <select class="" name="status">
           @foreach($status as $status)
-          <option value="{{ $status->id}}"> {{ $status->name }}</option>
+          <option {{ $status->id == $product->status_id ? 'selected' : '' }} value="{{ $status->id}}"> {{ $status->name }}</option>
           @endforeach
         </select>
 
@@ -79,12 +80,21 @@ input[type=submit]:hover {
       <div>
               <label for="image" class="col-2 col-form-label">Image</label>
               <input type="file" id="image" name="image" class="form-control">
+              @if ($product->image)
+                  <img src="{{ asset($product->image) }}" alt="" width="250">
+              @endif
       </div>
       <div>
 
-            <input type="submit" value="Make product">
+            <input type="submit" value="edit product">
 
       </div>
+    </form>
+    <form action="{{ url("/donation/$product->id") }}" method="post" style="display: inline;">
+        @csrf
+        @method('DELETE')
+
+        <input type="submit" value="Delete" class="btn btn-danger">
     </form>
 
  </div>
