@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class donation_resarvation extends Model
 {
-    
-
     public function user_id(){
-      return $this->belongsToMany('App/users')
-
+      return $this->belongsToMany('App/User')
     }
+    public function user_id(){
+      return $this->belongsToMany('App/product')
+    }
+
 }

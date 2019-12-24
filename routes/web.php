@@ -8,11 +8,11 @@ Route::get('/view/{id}','HomeController@view')->middleware('auth');
 Route::get('/viewe/{id}','HomeController@viewe')->middleware('auth');
 
 // About page route
-route::get('/Aboutus','AboutusController@index');
+route::get('/aboutus','AboutusController@index');
 
 // Contact Us page route
-route::get('/Contactus','ContactusController@index');
-route::post('/Contactus','ContactusController@create');
+route::get('/contactus','ContactusController@index');
+route::post('/contactus','ContactusController@create');
 //SignIn page route
 // route::get('/signin','HomeController@signin');
 

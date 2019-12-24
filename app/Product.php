@@ -14,6 +14,10 @@ class Product extends Model
     return $this->belongsTo('App/product_status');
   }
   public function users(){
-    return $this->belongsToMany('App/users','donation_resarvations');
+    return $this->belongsTo('App/User');
+  }
+  public function D_users(){
+    return $this->belongsToMany('App/donation_resarvation');
+
   }
 }

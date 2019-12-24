@@ -26,7 +26,7 @@
         @foreach($product as $product)
         <div class="col-md-4 d-flex ftco-animate text-right">
           <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('{{ asset('../storage/app/public/$product->image')}}');">
+            <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($product->image))}}');">
             </a>
             <div class="text p-4 d-block">
               <div class="meta mb-3">
