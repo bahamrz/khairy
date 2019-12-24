@@ -50,14 +50,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-<<<<<<< HEAD
 // organization page route
 route::get('/organization','OrganizationController@index');
 route::get('/organization/create','OrganizationController@create');
 route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
 
 
-=======
 //User Profile page
 route::get('/user','UserProfileController@index');
->>>>>>> 98e580053791046146b6b5269579efe185d88395

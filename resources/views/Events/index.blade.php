@@ -28,7 +28,7 @@
             <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
                 <div><a href="#">{{$Event->created_at->diffForHumans()}}</a></div>
-                <div><a href="#">User Name</a></div>
+                <div><a href="#">اسم المنظمة </a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span>عدد المشاركات</a></div>
               </div>
               <h3 class="heading mb-4"><a href="#">{{$Event->Name}}</a></h3>

@@ -19,8 +19,7 @@
     <div class="container">
       <div class="row d-flex">
         @foreach ($Organization as $Organization)
-            
-        @endforeach
+
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
             <a href="#" class="block-20" style="background-image: url('{{ asset('../storage/app/public/$product->image')}}');">
@@ -36,7 +35,7 @@
             </div>
           </div>
         </div>
-      
+       @endforeach
       </div>
       <div class="row mt-5">
         <div class="col text-center">

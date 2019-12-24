@@ -54,6 +54,13 @@ input[type=submit]:hover {
           <input type="text" name="name" placeholder="Event Name">
 
       </div>
+      <select name="organization_id" >
+      @foreach ($Organization as $Organization )
+      
+      <option value="{{$Organization->Org_Id}}" > {{$Organization->Org_Name}}  </option>
+          
+      @endforeach
+      </select>
       <div>
           <label >Event time</label>
           <input type="date" name="date" placeholder="Event date">
