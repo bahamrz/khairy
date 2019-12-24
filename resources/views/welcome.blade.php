@@ -66,6 +66,7 @@
             }
         </style>
     </head>
+
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -86,17 +87,19 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
+                
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div >
+                {{-- <input type="submit" class="btn btn-primaty" value="any one Can Take me Home" href="/" > --}}
+                <p><a href="/" class="btn btn-white btn-outline-white px-4 py-3 ">any one Can Take me Home</a></p>
                 </div>
+
+                <div>
+
+                    <p><a href="/aboutus" class="btn btn-white btn-outline-white px-4 py-3 ">Only Admin Can Take me About Us</a></p>
+
+                </div>
+
             </div>
         </div>
     </body>

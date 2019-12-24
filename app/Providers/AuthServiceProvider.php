@@ -25,6 +25,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //Editing User Role Checking Gate #Baha
+        Gate::define('view-page', function($user){
+            return $user->hasRole('admin');
+
+
+        });
     }
 }

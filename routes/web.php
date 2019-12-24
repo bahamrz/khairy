@@ -58,3 +58,6 @@ route::post('/createorganization','OrganizationController@organizationstore')->n
 
 
 route::get('/user','UserProfileController@index');
+
+
+route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing 
