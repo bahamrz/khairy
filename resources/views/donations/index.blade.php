@@ -36,8 +36,8 @@
               </div>
               <h3 class="heading mt-3 text-right"><a href="/view/{{$product->id}}">{{$product->name}}</a></h3>
               <p class="text-right"> {{$product -> description}} </p>
-              <p><a class="bg-light pl-5" href="#"> حجز</a>
-              <a class="bg-light pl-5" href="/view/{{$product->id}}"> تفاصيل</a></p>
+              <a class="bg-light pl-5" href="/reserve/{{$product->id}}" > حجز</a>
+              <p><a class="bg-light pl-5" href="/view/{{$product->id}}"> تفاصيل</a></p>
             </div>
           </div>
         </div>

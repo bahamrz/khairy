@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\product;
 use App\Event;
+use Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -37,10 +39,21 @@ class HomeController extends Controller
         // return view('products.show', [
         //     'product' => Product::with('category')->find($id)
         // ]);
-        return view('Home.view',['product'=>product::find($id)]);
+        return view('Home.view',['product'=>product::with('User')->find($id)]);
     }
     public function viewe($id)
     {
         return view('Home.viewe',['event'=>Event::find($id)]);
+    }
+    public function store($id){
+      $reserve = new donation_resarvation;
+      $reservedUser = Auth::id();
+      // $product= product::find($id);
+
+      $reserve->user_id = $reservedUser;
+      $reserve->product_id = $id;
+
+      $reserve->save();
+      return redirect()->route('donation.index');
     }
 }
