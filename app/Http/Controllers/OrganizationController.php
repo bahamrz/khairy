@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Organization;
-<<<<<<< HEAD
-
-=======
->>>>>>> 98e580053791046146b6b5269579efe185d88395
 class OrganizationController extends Controller
 {
    public function index(){
@@ -24,14 +20,11 @@ class OrganizationController extends Controller
     $Org->Org_Name = request('Org_Name');
     $Org->Org_Desc = request('Org_Desc');
     $Org->save();
-    
+
     return view('Organization.index');
 
 
   }
-<<<<<<< HEAD
-  
-=======
 
   public function create(){
     return view('Organization.createOrg');
@@ -46,5 +39,4 @@ class OrganizationController extends Controller
 
     return redirect()->route('Organization.orgnize');
   }
->>>>>>> 98e580053791046146b6b5269579efe185d88395
 }
