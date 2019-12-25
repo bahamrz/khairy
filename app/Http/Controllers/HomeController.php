@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\product;
 use App\Event;
+use App\User;
+use App\donation_resarvation;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -42,5 +45,17 @@ class HomeController extends Controller
     public function viewe($id)
     {
         return view('Home.viewe',['event'=>Event::find($id)]);
+    }
+    public function store($id){
+      // $reserve = new donation_resarvation;
+      // $reservedUser = Auth::id();
+      //
+      // $reserve->user_id = $reservedUser;
+      // $reserve->product_id = $id;
+      //
+      // $reserve->save();
+
+      Product::find($id)->reservers()->attach(auth()->user());
+      return redirect()->route('donation.index');
     }
 }
