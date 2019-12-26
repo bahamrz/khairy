@@ -36,9 +36,17 @@
                       </div>
 
         </div>
-        <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
-        <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
-        <input type="submit" class="col-3 btn btn-danger btn-lg mt-1 mb-1" value="حذف">
+        <form class="" action="{{url('/donation')}}" method="get">
+          <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
+        </form>
+        <form class="" action="{{url('/donation/' . $product->id) . '/edit'}}" method="Get">
+          <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
+        </form>
+        <form class="" action="{{ url('/donation/' . $product->id) }}" method="post">
+          @csrf
+          @method('DELETE')
+          <input type="submit" class="col-3 btn btn-danger btn-lg mt-1 mb-1" value="حذف">
+        </form>
 
 </div>
 
