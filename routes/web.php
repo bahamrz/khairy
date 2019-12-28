@@ -44,7 +44,6 @@ route::patch('/donation/{id}','DonationController@update');     //product update
 Route::delete('/donation/{id}','DonationController@destroy'); // delete a product
 
 
-
 // Gallery page route
 route::get('/gallery','GalleryController@index');
 Auth::routes();
@@ -55,7 +54,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 route::get('/organization','OrganizationController@index');
 route::get('/organization/create','OrganizationController@create');
 route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
-
 
 
 route::get('/user','UserProfileController@index');

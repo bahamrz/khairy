@@ -72,6 +72,19 @@
         </div>
     	</div>
     </section> -->
+
+    <section style="background-color:#7a2e76">
+      	<div>
+    		<div class="row justify-content-center mb-2 pb-2">
+          <div class="col-md-9 heading-section  text-right">
+            <h2 class="mb-4" style=color:#ffffff; >مشروع خيري</h2>
+            <h4 style=color:#ffffff> تم انشاءه بواسطة فريق خيري خلال فترة التدريب في Tec Camp Tripoli 2019</h4>
+          </div>
+        </div>
+    		<div class="row">
+        
+    </section>
+
      <section class=" bg-light">
     	<div class="container-fluid">
     		<div class="row justify-content-center mb-5 pb-5">
@@ -82,14 +95,14 @@
         </div>
     		<div class="row">
 
-    @foreach($product as $product)
-
-         <div class="col-sm-3 col-md-4 d-flex ftco-animate " >
-          {{-- <div class="item"> --}}
-            <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('images/image_1.jpg');"></a>
-            <div class="text p-3 p-md-4 d-block text-right">
-                <div class="heading mb-4"><h3><a href="{{ url("/view/$product->id") }}">{{$product-> name}}</a></h3></div>
+    @foreach($product as $product)            
+        
+         <div class="col-sm-3 col-md-4 ftco-animate " style="">
+          <div class="item">
+            <div class="cause-entry align-self-stretch">
+            <a href="#" class="img" style="background-image: url('images/image_1.jpg');"></a>
+            <div class="text p-3 p-md-4 text-right">
+                <div><h3><a href="{{ url("/view/$product->id") }}">{{$product-> name}}</a></h3></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               <p class="text-truncate text-right" style="display:block "> {{$product -> description}} </p>
               <span class="donation-time mb-3 d-block">ينتهي خلال 3 ايام</span>
@@ -99,8 +112,9 @@
                     <span class="fund-raised d-block">عدد الطلبات  (8)</span>
             </div>
             </div>
-          {{-- </div> --}}
+          </div>
          </div>
+        
     @endforeach
       
     				</div>
@@ -111,19 +125,20 @@
 
  
 
-    <section class=" bg-primary">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
+    <section style="background-color:#14aeb0">
+    <div class="container-fluid">
+    		<div class="row justify-content-center mb-4 pb-4">
+          <div class="col-md-6 heading-section  text-center">
             <h2 class="mb-4">أحدث الحملات التطوعية</h2>
           </div>
         </div>
         <div class="row">
             @foreach ($Event as $Event)
-        	<div class="col-sm-4 col-md-4 d-flex ftco-animate">
+            <div class="col-sm-3 col-md-4 ftco-animate " style="">
           	<div class="blog-entry align-self-stretch">
               <a href="#" class="block-20" style="background-image: url('images/event-1.jpg');">
               </a>
+              
               <div class="text p-3 p-md-4 d-block text-right">
               	<div class="meta mb-3">
                   <div><a href="#">{{$Event-> Date}}</a></div>

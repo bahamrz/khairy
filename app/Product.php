@@ -17,7 +17,7 @@ class Product extends Model
     return $this->belongsTo('App\User', 'user_id');
   }
   public function reservers(){
-    return $this->belongsToMany('App\donation_resarvation', 'donation_resarvations' , 'user_id', 'product_id')->withTimestamps();
+    return $this->belongsToMany('App\User', 'donation_resarvations' , 'product_id', 'user_id')->withTimestamps();
 
   }
 }
