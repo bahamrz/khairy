@@ -11,7 +11,7 @@
           <div class="col-md-6">
                 <div class="card">
                     <div class="card-body"><i class="fas fa-user"></i>
-                      تم النشر بواسطة:
+                      تم النشر بواسطة: 
                     </div>
                 </div>
                 <div class="card">
@@ -34,8 +34,18 @@
                       </div>
 
         </div>
+        <div class="form:post">
+
+        </div>
         <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
         <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
+
+@if (Auth::id() == $product-> user_id) 
+        
+<a href="{{ url("/donation/$product->id/edit") }}" class="btn btn-warning">Edit</a>
+
+@endif
+
         <input type="submit" class="col-3 btn btn-danger btn-lg mt-1 mb-1" value="حذف">
 
 </div>

@@ -62,3 +62,4 @@ route::get('/user','UserProfileController@index');
 
 
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing 
+Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here 

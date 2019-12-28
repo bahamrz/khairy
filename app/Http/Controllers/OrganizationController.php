@@ -26,9 +26,10 @@ class OrganizationController extends Controller
 
   }
 
-  public function create(){
-    return view('Organization.createOrg');
-  }
+  // public function create(){
+  //   return view('Organization.createOrg');
+  // }
+  //Baha Commented this معرف الـكرييت مرتين :|
 
   public function orgstore(){
     $org1 = new Organization;

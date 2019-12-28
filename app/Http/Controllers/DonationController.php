@@ -8,6 +8,7 @@ use App\Product;
 use App\category;
 use App\product_status;
 use Auth;
+use App\User;
 
 class DonationController extends Controller
 {

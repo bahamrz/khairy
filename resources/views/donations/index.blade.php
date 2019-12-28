@@ -1,4 +1,5 @@
-@extends('Layout.main')
+
+  @extends('Layout.main')
 @section('title','| التبرعات')
 @section('content')
   <!-- main fullscreen img and overlay -->
@@ -15,12 +16,12 @@
   </div>
   <!-- main fullscreen img and overlay -->
   <!-- main cards section -->
-  <!-- @if(Session::has('success'))
-    <div class="alert alert-success">
-        {{Session::get('success')}}
-    </div>
-  @endif -->
-  <a href ="/donation/create" <button class="btn btn-primary ml-5" type="button" name="button"> CREATE NEW DONATION </button></a>
+  @auth
+<a href ="/donation/create"> <button class="btn btn-primary ml-5" type="button" name="button"> CREATE NEW DONATION </button></a>    
+@endauth)
+    
+    
+  
   <section class="ftco-section">
     <div class="container">
       <div class="row d-flex">
@@ -43,37 +44,8 @@
           </div>
         </div>
         @endforeach
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('images/image_2.jpg');">
-            </a>
-            <div class="text p-4 d-block">
-              <div class="meta mb-3">
-                <div><a href="#">2020 ,10 سبتمبر</a></div>
-                <div><a href="#">احمد احمد</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-3 text-right"><a href="#">هنا عنوان تاني لموضوع تاني :v</a></h3>
-              <p class="text-right">بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا بلا</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col text-center">
-          <div class="block-27">
-            <ul>
-              <li><a href="#">&lt;</a></li>
-              <li class="active"><span>1</span></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">&gt;</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+
+     
     </div>
   </section>
   <!-- main cards section -->

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\product;
+use App\Product;
 use App\Event;
 use App\User;
 use App\donation_resarvation;
@@ -30,16 +30,20 @@ class HomeController extends Controller
     {
         // return Redirect::to("/")->withSuccess('Success order');
         // return "hi";
-        // return view('home');
+        // return view('home'); 
         $product = product::latest()->take(3)->get();
         $Event = Event::latest()->take(3)->get();
         return view('Home.index',compact('product'),compact('Event'));
     }
     public function view($id)
     {
+        
         // return view('products.show', [
         //     'product' => Product::with('category')->find($id)
         // ]);
+
+        // $userid= product::find($id)->get($user_id);
+
         return view('Home.view',['product'=>product::find($id)]);
     }
     public function viewe($id)
