@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -34,6 +35,11 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('delete-users', function($user){
             return $user->hasRole('admin');
+        });
+
+
+        Gate::define('user-show',function($user){
+            return $user->hasAnyRoles(['orgadmin','user']);
         });
 
     }

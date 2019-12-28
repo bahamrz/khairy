@@ -107,13 +107,12 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Label 1</th>
-                                    <th>Label 2</th>
-                                    <th>Label 3</th>
-                                    <th>Label </th>
-                                    <th>Label </th>
-                                    <th>Label </th>
+                                    <th>عدد</th>
+                                    <th>التبرع</th>
+                                    <th>وصف</th>
+                                    <th>الحالة</th>
+                                    <th>الصنف</th>
+                                                                       
                                 </tr>
                             </thead>
                             <tbody id="items">
@@ -126,14 +125,18 @@
                                     <td>{{$product->category->name}}</td>
                                     <td><div class="col-xs-12">
                                 <br>
-                                <button class="btn  btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Edit</button>
-                                <button type="button" class="btn btn-danger"></i> Delete</button>
-                                
+                                <form class="" action="{{url('/donation/' . $product->id) . '/edit'}}" method="Get">
+                                <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
+                               </form>
+                               
+                               <form action="{{ url("/donation/$product->id") }}" method="post" style="display: inline;">
+                                   @csrf
+                                  @method('DELETE')
+
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                                </form>
                                 </div>
-                                </td>
-                                    
-                                    <td>Table cell</td>
-                                </tr>
+                              
                             @endforeach
                             </tbody>
                         </table>
