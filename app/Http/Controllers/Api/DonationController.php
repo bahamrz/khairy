@@ -17,10 +17,10 @@ class DonationController extends Controller
     {
         return response()->json(product::with('creator', 'category', 'status')->find($id));
     }
-    public function update(Request $request, $id)
-    {
-
-    }
+    // public function update(Request $request, $id)
+    // {
+    //
+    // }
     public function destroy($id)
     {
       return response()->json(product::find($id));

@@ -40,7 +40,7 @@ class User extends Authenticatable
       return $this->belongsToMany('App\Role');
     }
     public function hasAnyRoles($roles){
-      //Check user if he have any 
+      //Check user if he have any
       if($this->roles()->whereIn('name',$roles)->first()){
         return true;
 
@@ -48,7 +48,7 @@ class User extends Authenticatable
       return false;
     }
     public function hasRole($role){
-      
+
       if($this->roles()->where('name',$role)->first()){
         return true;
 
@@ -57,13 +57,13 @@ class User extends Authenticatable
     }
 
 
-  
+
 
     public function products(){
       return $this->hasMany('App\product');
     }
 
-    public function D_products(){
-      return $this->belongsToMany('App/donation_resarvation');
+    public function reserves(){
+      return $this->belongsToMany('App/Product', 'donation_resarvations');
     }
 }
