@@ -34,20 +34,19 @@
                       </div>
 
         </div>
-        <div class="form:post">
-
-        </div>
-        <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
-        <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
-
-@if (Auth::id() == $product-> user_id) 
-        
-<a href="{{ url("/donation/$product->id/edit") }}" class="btn btn-warning">Edit</a>
-
-@endif
-
-        <input type="submit" class="col-3 btn btn-danger btn-lg mt-1 mb-1" value="حذف">
-
+        @if (Auth::id() == $product-> user_id) 
+        <form class="" action="{{url('/donation')}}" method="get">
+          <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
+        </form>
+        <form class="" action="{{url('/donation/' . $product->id) . '/edit'}}" method="Get">
+          <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
+        </form>
+        <form class="" action="{{ url('/donation/' . $product->id) }}" method="post">
+          @csrf
+          @method('DELETE')
+          <input type="submit" class="col-3 btn btn-danger btn-lg mt-1 mb-1" value="حذف">
+        </form>
+        @endif
 </div>
 
 </body>
