@@ -24,6 +24,9 @@ class UsersController extends Controller
      */
     public function index()
     { 
+        if(Gate::denies('manage-users')){
+            return redirect(route('users.index'));
+        }
 
         $users = User::all();
         return view('admin.users.index',compact('users'));
@@ -72,7 +75,6 @@ class UsersController extends Controller
     {
         if(Gate::denies('edit-users')){
             return redirect(route('users.index'));
-
         }
         //
         $edituser = User::find($id);
@@ -89,7 +91,9 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        if(Gate::denies('manage-users')){
+            return redirect(route('users.index'));
+        }
         User::find($id)->roles()->sync($request->roles);
         $updateduser = User::find($id);
         $updateduser->name = request('name');

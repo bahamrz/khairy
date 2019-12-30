@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\event;
 use App\Organization;
 use Auth;
+use Gate;
 
 class EventController extends Controller
 {
@@ -19,6 +20,7 @@ class EventController extends Controller
 
       public function create(){
        
+  
           return view('Events.create',['Organization' => Organization::all()]);
           
        }
@@ -35,20 +37,11 @@ class EventController extends Controller
         $Event1->organization_id = request('organization_id');
         $Event1->image = request()->file('image') ? request()->file('image')->store('public') : null;
         $Event1->save();
-
-    
-        
-
         return redirect()->route('event.index');
         }
 
         public function edit($id)
         {
-            // return view('event.edit',  [
-            //     'category' => Category::all(),
-            //     'product' => Product::find($id),
-            //     'status' => product_status::all()
-            // ]);
             $Event = Event::find($id);
             return view('Events.edit',['Event'=>$Event ,
             'Organization' => Organization::all()]);
@@ -57,14 +50,10 @@ class EventController extends Controller
         public function update($id)
         {
             $Event1 = Event::find($id);
-    
             if (request()->file('image')) {
-    
                 $newImagePath = request()->file('image')->store('public');
-    
                 $Event1->image = str_replace('public/', '', $newImagePath);
             }
-    
             $Event1 = new Event;        
             $Event1->Name = request('name');
             $Event1->Date = request('date');
@@ -72,8 +61,6 @@ class EventController extends Controller
             $Event1->Place = request('Place');
             $Event1->organization_id = request('organization_id');
             $Event1->save();
-
-
             return redirect()->route('event.index');
         }
         public function destroy($id)

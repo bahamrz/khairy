@@ -1,97 +1,76 @@
-</<!DOCTYPE html>
-<html>
-<head>
+@extends('Layout.main')
+@section('title','| إنشاء حملة جديدة')
+@section('content')
+    
+<body style="background-color:#41B3A3;">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+<div class="container" style="padding-top:100px; padding-bottom:100px;">
+  
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="card py-300%">
+            <div class="card-header text-right">بيانات التبرع</div>
 
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
+            <div class="card-body">
 
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
-
-</head>
-<body>
-
-<h1>Create New Event</h1>
-
-<div class="container">
-
-    <form method="POST" action="{{route('newevent')}}" enctype="multipart/form-data">
-
-        @csrf
-
-       <div>
-          <label >Event Name</label>
-          <input type="text" name="name" placeholder="Event Name">
-
-      </div>
-      <div>
-      <label >Organization Name</label>
-      <select name="organization_id" >
-      @foreach ($Organization as $Org )     
-      <option value="{{$Org->id}}" > {{$Org->Org_Name}}</option>         
-      @endforeach
+  <form method="POST" action="{{route('newevent')}}" enctype="multipart/form-data">
+    
+    @csrf
+    
+    <div class="input-group row py-10%">
+      {{-- <label >Event Name</label> --}}
+      <input type="text" class="form-control" name="name" placeholder="إسم الحملة">
+      
+    </div>
+    <hr>
+    <div class="input-group row">
+      {{-- <label >Organization Name</label> --}}
+      <select class="form-control" name="organization_id" hint="الرجاء إختيار المنظمة">
+        <option value="none" disabled selected value>الرجاء إختيار المنظمة</option>
+        @foreach ($Organization as $Org )     
+        <option value="{{$Org->id}}" > {{$Org->Org_Name}}</option>         
+        @endforeach
       </select>
-      </div>
-      <div>
-          <label >Event time</label>
-          <input type="date" name="date" placeholder="Event date">
+    </div>
+    <hr>
+    <div class="input-group row">
+      {{-- <label >Event time</label> --}}
+      <input type="date" class="form-control" name="date" placeholder="تاريخ الحملة">
+      
+    </div>
+    <hr>
+    <div class="input-group row">
+      {{-- <label >Event place</label> --}}
+      <input type="text" class="form-control" name="Place" placeholder="مكان الحملة">
+      
+    </div>
+    <hr>
+    <div class="input-group row">
+      {{-- <label >Event Description</label> --}}
+      <textarea name="description" class="form-control" placeholder="وصف الحملة"></textarea>
+      
+    </div>
+    <div class="input-group row">
+      {{-- <label >Imag for Event </label> --}}
+      <hr>
+      {{-- <label  class="col-2 col-form-label">Image</label> --}}
+      <input type="file" class="form-control" id="image" name="image" class="form-control">
+    </div>
+    <hr>
+    <div>
+      
+      <input type="submit" class="btn btn-primary" value="إنشاء الحملة">
+      
+    </div>
+    
+  </form>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
 
-      </div>
-      <div>
-          <label >Event place</label>
-          <input type="text" name="Place" placeholder="Event Place">
-
-      </div>
-      <div>
-            <label >Event Description</label>
-            <textarea name="description" placeholder="Event Description"></textarea>
-
-      </div>
-       <div>
-       <label >Imag for Event </label>
-       <br>
-              <label  class="col-2 col-form-label">Image</label>
-              <input type="file" id="image" name="image" class="form-control">
-      </div>
-      <div>
-
-            <input type="submit" value="Make Event">
-
-      </div>
-
-    </form>
-
- </div>
 
 </body>
-</html>
+@endsection

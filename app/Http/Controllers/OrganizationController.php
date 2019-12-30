@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Organization;
+use Gate;
 class OrganizationController extends Controller
 {
+  public function __construct()
+  {
+    // يمنع أي حد ماعنداش صلاحية يوصل للفيو هضا
+    $this->middleware('can:manage-users');
+
+  }
+
+
    public function index(){
+     
     $Organization = Organization::latest()->get();
     return view('Organization.index',compact('Organization'));
   }

@@ -16,6 +16,13 @@
   </div>
   <!-- main fullscreen img and overlay -->
   <!-- main cards section -->
+
+  @auth
+  <a href ="/event/create"> <button class="btn btn-primary ml-5" type="button" name="button"> إنشاء حملة جديدة </button></a>    
+  @endauth)
+
+
+
   <section class="ftco-section">
     <div class="container">
       <div class="row">

@@ -16,9 +16,10 @@
   </div>
   <!-- main fullscreen img and overlay -->
   <!-- main cards section -->
+
   @auth
-<a href ="/donation/create"> <button class="btn btn-primary ml-5" type="button" name="button"> CREATE NEW DONATION </button></a>    
-@endauth)
+  <a href ="/donation/create"> <button class="btn btn-primary ml-5" type="button" name="button"> CREATE NEW DONATION </button></a>
+  @endauth)
     
     
   
@@ -33,7 +34,7 @@
             <div class="text p-4 d-block">
               <div class="meta mb-3">
                 <div><a href="#">سبتمبر 10, 2020</a></div>
-                <div><a href="#">{{$product->name}}</a></div>
+                <div><a href="#">{{$product->creator->name}}</a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
               </div>
               <h3 class="heading mt-3 text-right"><a href="/view/{{$product->id}}">{{$product->name}}</a></h3>
