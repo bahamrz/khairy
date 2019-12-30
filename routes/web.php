@@ -55,8 +55,8 @@ route::get('/organization','OrganizationController@index');
 route::get('/organization/create','OrganizationController@create');
 route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
 
-
-route::get('/user','UserProfileController@index');
+//User Profile Page route
+route::get('/user','UserProfileController@index')->name('user');
 
 
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing 

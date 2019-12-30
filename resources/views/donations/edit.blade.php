@@ -9,7 +9,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 input[type=text], select, textarea {
   width: 100%;
-  padding: 12px;
+  padding: 12px; 
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
