@@ -13,7 +13,7 @@
           <div class="col-md-6">
                 <div class="card">
                     <div class="card-body"><i class="fas fa-user"></i>
-                      تم النشر بواسطة: 
+                      تم النشر بواسطة: {{$event->Organization->Org_Name}}
                     </div>
                 </div>
                 <div class="card">
@@ -30,7 +30,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body rounded border border-light text-right">
-                              <img src="..." alt="..." class="img-thumbnail">
+                              <img src="{{ asset(Storage::url($event->image))}}" alt="..." class="img-thumbnail">
                             </div>
                         </div>
                       </div>

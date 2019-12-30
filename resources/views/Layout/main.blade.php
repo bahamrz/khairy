@@ -47,11 +47,11 @@
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav justify-content-end">
           <li class="nav-item active"><a href="/" class="nav-link">الرئيسية</a></li>
-          <li class="nav-item"><a href="donation" class="nav-link">التبرعات</a></li>
-          <li class="nav-item"><a href="event" class="nav-link">الحملات</a></li>
-          <li class="nav-item"><a href="gallery" class="nav-link">استوديو صور</a></li>
-          <li class="nav-item"><a href="aboutus" class="nav-link">كيف تستعمل خيري</a></li>
-          <li class="nav-item"><a href="contactus" class="nav-link">تواصل معنا</a></li>
+          <li class="nav-item"><a href="/donation" class="nav-link">التبرعات</a></li>
+          <li class="nav-item"><a href="/event" class="nav-link">الحملات</a></li>
+          <li class="nav-item"><a href="/gallery" class="nav-link">استوديو صور</a></li>
+          <li class="nav-item"><a href="/aboutus" class="nav-link">كيف تستعمل خيري</a></li>
+          <li class="nav-item"><a href="/contactus" class="nav-link">تواصل معنا</a></li>
       </ul>
       <ul class="nav navbar-nav flex-row justify-content-between mr-auto  " >
                         <!-- Authentication Links -->
@@ -75,11 +75,15 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                                        
+                                        
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                          @csrf
+                                        </form>
+                                      </a>
+                                      @can('manage-users')
+                                      <a class ="dropdown-item" href="{{route ('users.index')}}">User Managment</a>
+                                      @endcan
                                 </div>
                             </li>
                         @endguest

@@ -4,15 +4,16 @@ Carbon::setLocale('ar_LY'); // باش تتعرب التواريخ
 
 // Home page route
 Route::get('/','HomeController@index');
-Route::get('/view/{id}','HomeController@view');
-Route::get('/viewe/{id}','HomeController@viewe');
+Route::get('/view/{id}','HomeController@view')->middleware('auth');
+Route::get('/viewe/{id}','HomeController@viewe')->middleware('auth');
+Route::get('/reserve/{id}','HomeController@store')->middleware('auth');
 
 // About page route
-route::get('/Aboutus','AboutusController@index');
+route::get('/aboutus','AboutusController@index');
 
 // Contact Us page route
-route::get('/Contactus','ContactusController@index');
-route::post('/Contactus','ContactusController@create');
+route::get('/contactus','ContactusController@index');
+route::post('/contactus','ContactusController@create');
 //SignIn page route
 // route::get('/signin','HomeController@signin');
 
@@ -43,7 +44,6 @@ route::patch('/donation/{id}','DonationController@update');     //product update
 Route::delete('/donation/{id}','DonationController@destroy'); // delete a product
 
 
-
 // Gallery page route
 route::get('/gallery','GalleryController@index');
 Auth::routes();
@@ -57,4 +57,16 @@ route::post('/createorganization','OrganizationController@organizationstore')->n
 
 
 //User Profile page
+
 route::get('/user','UserProfileController@index');
+route::get('/user','UserProfileController@index');
+
+
+route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing 
+Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here 
+
+//event edit & update & delete 
+
+route::get('/event/{id}/edit','EventController@edit');   
+route::patch('/event/{id}','EventController@update');    
+Route::delete('/event/{id}','EventController@destroy');

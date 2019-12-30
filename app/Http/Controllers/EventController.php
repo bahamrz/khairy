@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\event;
 use App\Organization;
+use Auth;
 
 class EventController extends Controller
 {
     public function index() {
 
-        $Event = Event::latest()->get();
-        return view('Events.index',['Event'=>$Event,'Organization'=>Organization::all()]);
+        $Event = Event::latest()->paginate(4);
+        return view('Events.index',['Event'=>$Event]);
         
 
     }
@@ -23,21 +24,61 @@ class EventController extends Controller
        }
 
      public function eventstore(){
-   
+      
+      
+        
         $Event1 = new Event;        
         $Event1->Name = request('name');
         $Event1->Date = request('date');
         $Event1->Description = request('description');
         $Event1->Place = request('Place');
-        $Event->organization_id = request('organization_id');
+        $Event1->organization_id = request('organization_id');
+        $Event1->image = request()->file('image') ? request()->file('image')->store('public') : null;
         $Event1->save();
 
-     //   $organization_id = request('organization');
-
-      //  Organization::find($organization_id)->Event()->save($Event1);
+    
         
 
         return redirect()->route('event.index');
         }
 
+        public function edit($id)
+        {
+            // return view('event.edit',  [
+            //     'category' => Category::all(),
+            //     'product' => Product::find($id),
+            //     'status' => product_status::all()
+            // ]);
+            $Event = Event::find($id);
+            return view('Events.edit',['Event'=>$Event ,
+            'Organization' => Organization::all()]);
+        }
+    
+        public function update($id)
+        {
+            $Event1 = Event::find($id);
+    
+            if (request()->file('image')) {
+    
+                $newImagePath = request()->file('image')->store('public');
+    
+                $Event1->image = str_replace('public/', '', $newImagePath);
+            }
+    
+            $Event1 = new Event;        
+            $Event1->Name = request('name');
+            $Event1->Date = request('date');
+            $Event1->Description = request('description');
+            $Event1->Place = request('Place');
+            $Event1->organization_id = request('organization_id');
+            $Event1->save();
+
+
+            return redirect()->route('event.index');
+        }
+        public function destroy($id)
+        {
+            Event::find($id)->delete();
+            return redirect('/event');
+        }
 }

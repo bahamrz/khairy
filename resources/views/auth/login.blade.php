@@ -1,15 +1,16 @@
 @extends('Layout.main')
 @section('title','| تسجيل الدخول')
 @section('content')
+<section style="background-image: url(img/hhh.jpg);">
 
-<body style="background-color:#41B3A3">
+<body  >
 <!-- SignUP Page -->
 
         <div class="container"style="padding-top:100px;">
           <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div class="card card-signin my-5">
-                <div class="card-body">
+            <div class="col-lg-5 col-xl-5 mx-auto">
+              <div class="card card-signin my-4">
+                <div class="card-body " style="background-color:#FFFFFF">
                   <h3 class="card-title text-center">تسجيل الدخول</h3>
                   <form method="POST" class="form-signin" action="{{ route('login')}}">
                     @csrf
@@ -34,8 +35,8 @@
                       <label class="form-check-label" for="remember" style="display: inline-block; width: 300px; text-align: right;" >تذكرني</label>
                     </div>
                     <div class="container">
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #05386B;" type="submit">تسجيل الدخول</button>
-                        <a class="d-block text-center mt-2 small btn btn-primary" href="/register" >تسجيل حساب جديد</a>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #6b2568;" type="submit">تسجيل الدخول</button>
+                        <a class="d-block text-center mt-2 small btn btn-primary"  href="/register" style="background-color: #14aeb0; >تسجيل حساب جديد</a>
                         @if (Route::has('password.request'))
                         <a class="btn btn-link d-block text-center mt-2 small" style="display: inline-block;" href="{{ route('password.request') }}">
                         هل نسيت كلمة المرور؟
@@ -54,4 +55,5 @@
         </div>
 <!-- End of sign up page -->
 </body>
+</section >
 @endsection

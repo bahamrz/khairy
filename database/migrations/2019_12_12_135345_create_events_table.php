@@ -21,7 +21,7 @@ class CreateEventsTable extends Migration
             $table->integer('organization_id')
             ->references('id')
             ->on('Organization') ;           
-           // $table->pic('Name');
+            $table->string('image')->nullable();
             $table->string('Place');
             $table->timestamps();
         });

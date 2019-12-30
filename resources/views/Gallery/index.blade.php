@@ -7,7 +7,7 @@
   <!-- main fullscreen img and overlay -->
   <!-- main gallery section -->
 
-  <section class="ftco-section ftco-gallery img"  style="background-image: url(images/homepage4.jpg);">
+  <section class="ftco-section-3 img" style="background-image: url(img/bg_66.jpg);">
   <h1 class="mb-3 bread text-center">معرض الصور</h1>
 
     <div class="container">

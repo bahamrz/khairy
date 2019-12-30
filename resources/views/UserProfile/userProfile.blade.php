@@ -54,7 +54,7 @@
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10">
-            <h1>User name</h1></div>
+            <h1>{{auth()->user()->name}}</h1></div>
         <div class="col-sm-2">
             <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
         </div>
@@ -107,106 +107,37 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Label 1</th>
-                                    <th>Label 2</th>
-                                    <th>Label 3</th>
-                                    <th>Label </th>
-                                    <th>Label </th>
-                                    <th>Label </th>
+                                    <th>عدد</th>
+                                    <th>التبرع</th>
+                                    <th>وصف</th>
+                                    <th>الحالة</th>
+                                    <th>الصنف</th>
+                                                                       
                                 </tr>
                             </thead>
                             <tbody id="items">
+                            @foreach($userprod as $product)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
+                                    <td>{{$userprodCount}}</td> 
+                                    <td>{{$product->name}}</td>
+                                    <td>{{$product->description}}</td>
+                                    <td>{{$product->status->name}}</td>
+                                    <td>{{$product->category->name}}</td>
+                                    <td><div class="col-xs-12">
+                                <br>
+                                <form class="" action="{{url('/donation/' . $product->id) . '/edit'}}" method="Get">
+                                <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
+                               </form>
+                               
+                               <form action="{{ url("/donation/$product->id") }}" method="post" style="display: inline;">
+                                   @csrf
+                                  @method('DELETE')
+
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                                </form>
+                                </div>
+                              
+                            @endforeach
                             </tbody>
                         </table>
                         <hr>

@@ -1,4 +1,4 @@
-</<!DOCTYPE html>
+{{-- </<!DOCTYPE html>
 <html>
 <head>
 
@@ -41,53 +41,73 @@ input[type=submit]:hover {
 </head>
 <body>
 
-<h1>Create New product</h1>
+<h1>Create New product</h1> --}}
 
-<div class="container">
+@extends('Layout.main')
+@section('title', '| إنشاء تبرع جديد')
+    
+@section('content')
+    
+<body style="background-color:#41B3A3;">
 
-    <form method="POST" enctype="multipart/form-data" action="{{route('actionstore')}}">
+<div class="container " style="padding-top:100px; padding-bottom:100px;">
+  <div class="row justify-content-center">
+      <div class="col-md-12">
+          <div class="card py-300%">
+              <div class="card-header text-right">بيانات التبرع</div>
 
+              <div class="card-body">
+      
+      <form method="POST" enctype="multipart/form-data" action="{{route('actionstore')}}">
         @csrf
+        <div>
+          {{-- <label class="col-md-2 col-form-label text-md-right">إسم التبرع</label> --}}
+          <div class="form-group row py-10%">
+          <input type="text" class="form-control" name="name" placeholder="اسم المنتج">
+          </div>
+        </div>
+        <div>
+          {{-- <label >product Description</label> --}}
+          <textarea name="description" class="form-control" placeholder="وصف المنتج"></textarea>
+          
+        </div>
+        
+        <div>
+          <label for="category" class="col-md-2 col-form-label text-md-right">النوع</label>
+          <select class="form-control" name="category">
+            @foreach($category as $category)
+            <option value="{{ $category->id}}"> {{ $category->name }}</option>
+            @endforeach
+          </select>
+          
+        </div>
+        <div>
+          <label for="status" class="col-md-2 col-form-label text-md-right">حالة المنتج</label>
+          <select class="form-control" name="status">
+            @foreach($status as $status)
+            <option value="{{ $status->id}}"> {{ $status->name }}</option>
+            @endforeach
+          </select>
+          
+        </div>
+        <div>
+          <label for="image" class="col-2 col-form-label py-5px">الصورة</label>
+          <input type="file" id="image" name="image" class="form-control">
+        </div>
+        <div>
 
-       <div>
-          <label >product Name</label>
-          <input type="text" name="name" placeholder="product Name">
+          <div class="col-md-12">
+          <input type="submit" class="btn btn-success" value="إنشاء التبرع">
+          </div>
 
-      </div>
-      <div>
-            <label >product Description</label>
-            <textarea name="description" placeholder="product Description"></textarea>
-
-      </div>
-
-      <div>
-        <select class="" name="category">
-          @foreach($category as $category)
-          <option value="{{ $category->id}}"> {{ $category->name }}</option>
-          @endforeach
-        </select>
-
-      </div>
-      <div>
-        <select class="" name="status">
-          @foreach($status as $status)
-          <option value="{{ $status->id}}"> {{ $status->name }}</option>
-          @endforeach
-        </select>
-
-      </div>
-      <div>
-              <label for="image" class="col-2 col-form-label">Image</label>
-              <input type="file" id="image" name="image" class="form-control">
-      </div>
-      <div>
-
-            <input type="submit" value="Make product">
-
-      </div>
-    </form>
-
- </div>
-
+        </div>
+      </form>
+      
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
-</html>
+@endsection
+

@@ -1,8 +1,8 @@
 @extends('Layout.main')
 
 @section('content')
-<body style="background-color:black">
-<section class="ftco-section-w img" style="background-image: url(images/kh_ethics.png); background-size: cover;">
+<body>
+<section class="ftco-section ftco-gallery img" style="background-image: url(img/bg_55.jpg);">
     	<div class="overlay"></div>
     	<div class="container">
     		<div class="row d-md-flex">
@@ -22,7 +22,7 @@
                                     <div class="icon-round text-center d-inline-block rounded-circle bg-success-gradiant">1</div>
                                 </div>
                                 <h5 class="font-weight-medium"style="text-align:right;">يبدأ عملك التطوعي بالتسجيل</h5>
-                                <p class="mt-3"style="text-align:right;">تبدأ من خلال تسجيل حسابك. هذا يستغرق سوى بضع دقائق، وتحتاج فقط إلى توفير معلومات أساسية عنك. </p>
+                                <p class="mt-3"style="text-align:right;">عملية التسجيل لن تستغرق سوى دقيقتان، وتحتاج فقط إلى توفير معلومات أساسية عنك، ستقوم بتسحيل الدخول بنفس المسنخدم في المرات التالية. </p>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                                     <div class="icon-round text-center d-inline-block rounded-circle bg-success-gradiant">2</div>
                                 </div>
                                 <h5 class="font-weight-medium" style="text-align:right;">البحث عن عمل خيري</h5>
-                                <p class="mt-3"style="text-align:right;">يمكنك البحث عن طريق خيري على العديد من الفرص</p>
+                                <p class="mt-3"style="text-align:right;">يمكنك البحث عن طريق خيري على العديد من العروض الخيرية المنشورة من قبل الآخرين ،كما يمكنك انشاء عروض خيرية و مشاركتها مع الآخرين</p>
                             </div>
                         </div>
                     </div>
@@ -43,8 +43,8 @@
                                 <div class="icon-space">
                                     <div class="icon-round text-center d-inline-block rounded-circle bg-success-gradiant">3</div>
                                 </div>
-                                <h5 class="font-weight-medium"style="text-align:right;"> عمل الخير</h5>
-                                <p class="mt-3"style="text-align:right;">تصفح خيري وإختيار عمل خيري للمشاركة به</p>
+                                <h5 class="font-weight-medium"style="text-align:right;"> الانضمام إلى عمل تطوعي</h5>
+                                <p class="mt-3"style="text-align:right;">تصفح الحملات التطوعية المنشورة وقم بأختيار عمل خيري مناسب لك تستطيع المساعدة فيه أو اختر حملة تطوعية للمشاركة بها</p>
                             </div>
                         </div>
                     </div>

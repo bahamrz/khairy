@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrganizationsTable extends Migration
+class CreateDonationResarvationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateOrganizationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('organizations', function (Blueprint $table) {
+        Schema::create('donation_resarvations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Org_Name');
-            $table->mediumText('Org_Desc');
-            //$table->string('Org_Logo')->nullable();
+            $table->integer('user_id')
+                  ->references('id')
+                  ->on('users');
+            $table->integer('product_id')
+                  ->references('id')
+                  ->on('products');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateOrganizationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('organizations');
+        Schema::dropIfExists('donation_resarvations');
     }
 }

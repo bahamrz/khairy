@@ -27,4 +27,23 @@ class OrganizationController extends Controller
 
   }
   
-}
+
+  //   return view('Organization.index');
+
+
+  // }
+
+  // public function create(){
+  //   return view('Organization.createOrg');
+  // }
+
+  // public function orgstore(){
+  //   $org1 = new Organization;
+
+  //   $org1->Org_Name = request('name');
+  //   $org1->Org_Desc = request('description');
+  //   $org1->save();
+
+  //   return redirect()->route('Organization.orgnize');
+  }
+
