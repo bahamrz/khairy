@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->text('Description');
             $table->integer('organization_id')
             ->references('id')
-            ->on('Organization') ;           
+            ->on('Organization') ;
             $table->string('image')->nullable();
             $table->string('Place');
             $table->timestamps();

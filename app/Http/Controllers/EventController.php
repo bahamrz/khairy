@@ -48,7 +48,7 @@ class EventController extends Controller
         }
     
         public function update($id)
-        {
+        { 
             $Event1 = Event::find($id);
             if (request()->file('image')) {
                 $newImagePath = request()->file('image')->store('public');
