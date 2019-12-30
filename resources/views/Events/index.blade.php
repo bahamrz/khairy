@@ -17,9 +17,10 @@
   <!-- main fullscreen img and overlay -->
   <!-- main cards section -->
 
-  @auth
+  @can('event-creator')
   <a href ="/event/create"> <button class="btn btn-primary ml-5" type="button" name="button"> إنشاء حملة جديدة </button></a>    
-  @endauth)
+  @endcan
+
 
 
 
@@ -27,7 +28,7 @@
     <div class="container">
       <div class="row">
         <!-- this is lool started-->       
-         @foreach($Event as $Event)
+         @foreach($Eventt as $Event)
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
             <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($Event->image))}}');">
@@ -38,7 +39,7 @@
                 <div><a href="#">{{$Event->Organization->Org_Name}} </a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span>عدد المشاركات</a></div>
               </div>
-              <h3 class="heading mb-4"><a href="#">{{$Event->Name}}</a></h3>
+            <h3 class="heading mb-4"><a href="/viewe/{{$Event-> id}}">{{$Event->Name}}</a></h3>
               <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> {{$Event->Date}} </span> <span><i class="icon-map-o"></i> {{$Event->Place}} </span></p>
               <p>{{$Event->Description}}</p>
               <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
@@ -50,7 +51,14 @@
       <div class="row mt-5">
         <div class="col text-center">
           <div class="block-27">
-            <ul>
+            <div>
+            {{-- {{$Event->links()}} --}}
+            
+            {{ $Eventt-> links() }}
+
+            {{-- // PAGINATION WORKINGGG !!! --}}
+            </div>
+            {{-- <ul>
               <li><a href="#">&lt;</a></li>
               <li class="active"><span>1</span></li>
               <li><a href="#">2</a></li>
@@ -58,7 +66,7 @@
               <li><a href="#">4</a></li>
               <li><a href="#">5</a></li>
               <li><a href="#">&gt;</a></li>
-            </ul>
+            </ul> --}}
           </div>
         </div>
       </div>

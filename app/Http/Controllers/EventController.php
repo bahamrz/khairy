@@ -7,20 +7,20 @@ use App\event;
 use App\Organization;
 use Auth;
 use Gate;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
     public function index() {
 
-        $Event = Event::latest()->paginate(4);
-        return view('Events.index',['Event'=>$Event]);
+        $Eventt = Event::latest()->paginate(6);
+        return view('Events.index',['Eventt'=>$Eventt]);
         
 
     }
 
       public function create(){
-       
-  
+
           return view('Events.create',['Organization' => Organization::all()]);
           
        }
