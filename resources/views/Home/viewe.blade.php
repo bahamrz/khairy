@@ -36,10 +36,19 @@
                       </div>
           
         </div>
-        <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
-        <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
-        <input type="submit" class="col-3 btn btn-danger btn-lg mt-1 mb-1" value="حذف">
-        
+        @if (Auth::id() == $event->organization_id) 
+          <form class="" action="{{url('#')}}" method="get">
+            <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
+          </form>
+          <form class="" action="{{url('/event/' . $event->id) . '/edit'}}" method="Get">
+            <input type="submit" class="col-3 btn btn-secondary btn-lg mt-1 mb-1" value="تعديل">
+          </form>
+          <form class="" action="{{ url('/event/' . $event->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <input type="submit" class="col-3 btn btn-danger btn-lg mt-1 mb-1" value="حذف">
+          </form>
+        @endif
 </div>
 
 </body>

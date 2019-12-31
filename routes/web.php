@@ -23,7 +23,7 @@ route::post('/contactus','ContactusController@create');
 //Events page route
 route::get('/event','EventController@index')->name('event.index');
 
-route::get('/event/create','EventController@create');
+route::get('/event/create','EventController@create')->middleware('auth');
 route::post('/createevent','EventController@eventstore')->name('newevent');
 
 //donations page route
@@ -36,7 +36,7 @@ route::post('/createaction','DonationController@productstore')->name('actionstor
 route::get('/category/create','CategoryController@create');
 route::post('/newcategory','CategoryController@store')->name('newcategory');
 
-route::get('/productstatus/create','StatusController@create');
+route::get('/productstatus/create','StatusController@create')->middleware('auth');;
 route::post('/newstatus','StatusController@store')->name('newstatus');
 
 route::get('/donation/{id}/edit','DonationController@edit');   //product edit (page)
@@ -52,7 +52,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // organization page route
 route::get('/organization','OrganizationController@index');
-route::get('/organization/create','OrganizationController@create');
+route::get('/organization/create','OrganizationController@create')->middleware('auth');
 route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
 
 //User Profile Page route

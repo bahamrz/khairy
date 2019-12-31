@@ -41,6 +41,11 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('user-show',function($user){
             return $user->hasAnyRoles(['orgadmin','user']);
         });
+        Gate::define('event-creator',function($user){ //صلاحيات من يقدر يدير إيفينت
+            return $user->hasAnyRoles(['orgadmin','admin']);
+        });
+
+
 
     }
 }

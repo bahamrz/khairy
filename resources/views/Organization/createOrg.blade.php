@@ -1,73 +1,47 @@
-</<!DOCTYPE html>
-<html>
-<head>
+@extends('Layout.main')
+@section('title','| إنشاء منظمة جديدة')
+@section('content')
+    
+<body style="background-color:#41B3A3;">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
 
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
-
-</head>
-<body>
-
-<h1>Create New product</h1>
-
-<div class="container">
-
-    <form method="POST" action="{{route('storeInDB')}}">
-
+  <div class="container" style="padding-top:100px; padding-bottom:100px;">
+  
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+          <div class="card py-300%">
+              <div class="card-header text-right">بيانات التبرع</div>
+  
+              <div class="card-body">
+        
+      <form method="POST" action="{{route('storeInDB')}}">
+        
         @csrf
-
-       <div>
+        
+        <div>
           <label >Organization Name</label>
           <input type="text" name="name" placeholder=" Organization Name">
-
+          
+        </div>
+        <div>
+          <label >Organization Description</label>
+          <textarea name="description" placeholder="Organization Description"></textarea>
+          <label >still to add logo and contacts in DB</label>
+        </div>
+        <div>
+          
+          <input type="submit" value="Add Orginzation">
+          
+        </div>
+        
+      </form>
+      
+          </div>
+          </div>
       </div>
-      <div>
-            <label >Organization Description</label>
-            <textarea name="description" placeholder="Organization Description"></textarea>
-            <label >still to add logo and contacts in DB</label>
-      </div>
-      <div>
-
-            <input type="submit" value="Add Orginzation">
-
-      </div>
-
-    </form>
-
- </div>
+    </div>
+  </div>
 
 </body>
-</html>
+
+@endsection

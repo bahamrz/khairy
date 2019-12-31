@@ -13,7 +13,7 @@ use App\User;
 class DonationController extends Controller
 {
     public function index(){
-      $product = product::latest()->get();
+      $product = product::latest()->get(); 
       return view ('donations.index',compact('product'));
     }
 
