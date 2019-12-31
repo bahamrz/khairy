@@ -23,12 +23,12 @@
          @foreach($Event as $Event)
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('images/cleaning.png');">
+            <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($Event->image))}}');">
             </a>
             <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
                 <div><a href="#">{{$Event->created_at->diffForHumans()}}</a></div>
-                <div><a href="#">User Name</a></div>
+                <div><a href="#">{{$Event->Organization->Org_Name}} </a></div>
                 <div><a href="#" class="meta-chat"><span class="icon-chat"></span>عدد المشاركات</a></div>
               </div>
               <h3 class="heading mb-4"><a href="#">{{$Event->Name}}</a></h3>

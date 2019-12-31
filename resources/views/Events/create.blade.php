@@ -45,7 +45,7 @@ input[type=submit]:hover {
 
 <div class="container">
 
-    <form method="POST" action="{{route('newevent')}}">
+    <form method="POST" action="{{route('newevent')}}" enctype="multipart/form-data">
 
         @csrf
 
@@ -53,6 +53,14 @@ input[type=submit]:hover {
           <label >Event Name</label>
           <input type="text" name="name" placeholder="Event Name">
 
+      </div>
+      <div>
+      <label >Organization Name</label>
+      <select name="organization_id" >
+      @foreach ($Organization as $Org )     
+      <option value="{{$Org->id}}" > {{$Org->Org_Name}}</option>         
+      @endforeach
+      </select>
       </div>
       <div>
           <label >Event time</label>
@@ -68,6 +76,12 @@ input[type=submit]:hover {
             <label >Event Description</label>
             <textarea name="description" placeholder="Event Description"></textarea>
 
+      </div>
+       <div>
+       <label >Imag for Event </label>
+       <br>
+              <label  class="col-2 col-form-label">Image</label>
+              <input type="file" id="image" name="image" class="form-control">
       </div>
       <div>
 

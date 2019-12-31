@@ -66,4 +66,7 @@ class User extends Authenticatable
     public function reserves(){
       return $this->belongsToMany('App/Product', 'donation_resarvations');
     }
+    public function participations(){
+      return $this->belongsToMany('App\Event');
+    }
 }

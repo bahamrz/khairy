@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
+use App\product;
 use App\Event;
 use App\User;
 use App\donation_resarvation;

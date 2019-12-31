@@ -20,24 +20,30 @@ class OrganizationController extends Controller
     $Org->Org_Name = request('Org_Name');
     $Org->Org_Desc = request('Org_Desc');
     $Org->save();
-
-    return view('Organization.index');
+    
+    
+    return redirect('/organization');
 
 
   }
+  
+
+  //   return view('Organization.index');
+
+
+  // }
 
   // public function create(){
   //   return view('Organization.createOrg');
   // }
-  //Baha Commented this معرف الـكرييت مرتين :|
 
-  public function orgstore(){
-    $org1 = new Organization;
+  // public function orgstore(){
+  //   $org1 = new Organization;
 
-    $org1->Org_Name = request('name');
-    $org1->Org_Desc = request('description');
-    $org1->save();
+  //   $org1->Org_Name = request('name');
+  //   $org1->Org_Desc = request('description');
+  //   $org1->save();
 
-    return redirect()->route('Organization.orgnize');
+  //   return redirect()->route('Organization.orgnize');
   }
-}
+
