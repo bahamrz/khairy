@@ -15,7 +15,7 @@ class EventController extends Controller
 
         $Eventt = Event::latest()->paginate(6);
         return view('Events.index',['Eventt'=>$Eventt]);
-        
+
     }
 
       public function create(){
@@ -53,7 +53,7 @@ class EventController extends Controller
                 $newImagePath = request()->file('image')->store('public');
                 $Event1->image = str_replace('public/', '', $newImagePath);
             }
-            $Event1 = new Event;
+
             $Event1->Name = request('name');
             $Event1->Date = request('date');
             $Event1->Description = request('description');
