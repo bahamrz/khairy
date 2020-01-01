@@ -31,8 +31,12 @@
          @foreach($Eventt as $Event)
         <div class="col-md-4 d-flex ftco-animate">
           <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($Event->image))}}');">
-            </a>
+             @if ($Event->image == null)
+             <a href="#" class="block-20" style="background-image: url('images/hands1.jpg');">
+            @else
+            <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($Event->image ))}}');"> 
+             @endif         
+            </a>       
             <div class="text p-4 d-block text-right">
               <div class="meta mb-3">
                 <div><a href="#">{{$Event->created_at->diffForHumans()}}</a></div>

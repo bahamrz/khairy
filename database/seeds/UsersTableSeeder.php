@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         // User::truncate();
-        DB::table('role_user')->truncate();
+        // DB::table('role_user')->truncate();
 
         $adminRole = Role::where('name', 'admin')->first();
         $orgadminRole = Role::where('name', 'orgadmin')->first();
