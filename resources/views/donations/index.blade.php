@@ -20,17 +20,20 @@
   @auth
   <a href ="/donation/create"> <button class="btn btn-primary ml-5" type="button" name="button"> CREATE NEW DONATION </button></a>
   @endauth)
-    
-    
-  
+
+
+
   <section class="ftco-section">
     <div class="container">
       <div class="row d-flex">
         @foreach($product as $product)
         <div class="col-md-4 d-flex ftco-animate text-right">
           <div class="blog-entry align-self-stretch">
-            <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($product->image))}}');">
-            </a>
+            @if($product->image == null)
+              <a href="#" class="block-20" style="background-image: url('images/love.jpg');"></a>
+            @else
+              <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($product->image))}}');"></a>
+            @endif
             <div class="text p-4 d-block">
               <div class="meta mb-3">
                 <div><a href="#">سبتمبر 10, 2020</a></div>
@@ -46,7 +49,7 @@
         </div>
         @endforeach
 
-     
+
     </div>
   </section>
   <!-- main cards section -->

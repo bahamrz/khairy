@@ -11,7 +11,7 @@
           <div class="col-md-6">
                 <div class="card">
                     <div class="card-body"><i class="fas fa-user"></i>
-                      تم النشر بواسطة: 
+                      تم النشر بواسطة:  {{$product->creator->name}}
                     </div>
                 </div>
                 <div class="card">
@@ -28,13 +28,17 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body rounded border border-light text-right">
-                              <img src="{{ asset(Storage::url($product->image))}}" alt="..." class="img-thumbnail">
+                              @if($product->image == null)
+                                <img src="/images/love.jpg" alt=" defult img " class="img-thumbnail">
+                              @else
+                                <img src="{{ asset(Storage::url($product->image))}}" class="img-thumbnail">
+                              @endif
                             </div>
                         </div>
                       </div>
 
         </div>
-        @if (Auth::id() == $product-> user_id) 
+        @if (Auth::id() == $product-> user_id)
         <form class="" action="{{url('/donation')}}" method="get">
           <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="المشاركة">
         </form>

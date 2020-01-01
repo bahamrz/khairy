@@ -13,7 +13,7 @@ use App\User;
 class DonationController extends Controller
 {
     public function index(){
-      $product = product::latest()->get(); 
+      $product = product::latest()->paginate(9);
       return view ('donations.index',compact('product'));
     }
 
@@ -24,20 +24,19 @@ class DonationController extends Controller
     }
 
     public function productstore(){
+      $product = new Product;
 
-      $imagePath = request()->file('image')->store('public');
       $userid = Auth::id();
 
-      $product = new Product;
       $product->name = request('name');
       $product->user_id = $userid;
       $product->description = request('description');
       $product->Available = false;
       $product->status_id = request('status');
       $product->category_id = request('category');
-      $product->image = $imagePath;
-      $product->save();
+      $product->image = request()->file('image') ? request()->file('image')->store('public') : null ;
 
+      $product->save();
 
       return redirect()->route('donation.index');
     }

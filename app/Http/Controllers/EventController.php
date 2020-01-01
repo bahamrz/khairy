@@ -16,20 +16,19 @@ class EventController extends Controller
         $Eventt = Event::latest()->paginate(6);
         return view('Events.index',['Eventt'=>$Eventt]);
         
-
     }
 
       public function create(){
 
           return view('Events.create',['Organization' => Organization::all()]);
-          
+
        }
 
      public function eventstore(){
-      
-      
-        
-        $Event1 = new Event;        
+
+
+
+        $Event1 = new Event;
         $Event1->Name = request('name');
         $Event1->Date = request('date');
         $Event1->Description = request('description');
@@ -46,15 +45,15 @@ class EventController extends Controller
             return view('Events.edit',['Event'=>$Event ,
             'Organization' => Organization::all()]);
         }
-    
+
         public function update($id)
-        { 
+        {
             $Event1 = Event::find($id);
             if (request()->file('image')) {
                 $newImagePath = request()->file('image')->store('public');
                 $Event1->image = str_replace('public/', '', $newImagePath);
             }
-            $Event1 = new Event;        
+            $Event1 = new Event;
             $Event1->Name = request('name');
             $Event1->Date = request('date');
             $Event1->Description = request('description');
