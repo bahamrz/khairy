@@ -30,14 +30,14 @@ class HomeController extends Controller
     {
         // return Redirect::to("/")->withSuccess('Success order');
         // return "hi";
-        // return view('home'); 
+        // return view('home');
         $product = product::latest()->take(3)->get();
         $Event = Event::latest()->take(3)->get();
         return view('Home.index',compact('product'),compact('Event'));
     }
     public function view($id)
     {
-        
+
         // return view('products.show', [
         //     'product' => Product::with('category')->find($id)
         // ]);
@@ -59,7 +59,12 @@ class HomeController extends Controller
       //
       // $reserve->save();
 
+      $product = product::find($id);
+      $product->orders++;
+      $product->save();
+
+
       Product::find($id)->reservers()->attach(auth()->user());
-      return redirect()->route('donation.index');
+      return redirect()->route('donation.index')->withSuccess('Your Order was Seccessful ! , some one will contact you soon if they choose you for there donation ');
     }
 }
