@@ -67,3 +67,4 @@ Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-
 route::get('/event/{id}/edit','EventController@edit');   
 route::patch('/event/{id}','EventController@update');    
 Route::delete('/event/{id}','EventController@destroy');
+ 

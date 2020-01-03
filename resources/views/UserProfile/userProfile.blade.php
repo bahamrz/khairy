@@ -97,7 +97,7 @@
 
             <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                
+                <li><a href="#events" data-toggle="tab">Events</a></li>
                 <li><a href="#editAccount" data-toggle="tab">Edit Account</a></li>
             </ul>
 
