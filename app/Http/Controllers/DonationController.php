@@ -24,6 +24,9 @@ class DonationController extends Controller
     }
 
     public function productstore(){
+
+      request()->validate($this->rules());
+
       $product = new Product;
 
       $userid = Auth::id();
@@ -53,6 +56,8 @@ class DonationController extends Controller
 
     public function update($id)
     {
+      request()->validate($this->rules());
+
         $product = Product::find($id);
 
         if (request()->file('image')) {
@@ -76,6 +81,15 @@ class DonationController extends Controller
         Product::find($id)->delete();
 
         return redirect('/donation');
+    }
+    private function rules()
+    {
+        return [
+            'name' => 'required',
+            'description' => 'required',
+            'category' => 'required|exists:categories,id',
+            'status' => 'required|exists:product_statuses,id'
+        ];
     }
 
 }
