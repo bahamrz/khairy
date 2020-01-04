@@ -13,7 +13,7 @@ use App\User;
 class DonationController extends Controller
 {
     public function index(){
-      $products = product::latest()->paginate(3);
+      $products = product::latest()->paginate(9);
       return view ('donations.index',compact('products'));
     }
 

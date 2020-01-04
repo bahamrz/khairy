@@ -33,9 +33,9 @@ class HomeController extends Controller
         // return Redirect::to("/")->withSuccess('Success order');
         // return "hi";
         // return view('home');
-        $product = product::latest()->take(3)->get();
+        $products = product::latest()->take(3)->get();
         $Event = Event::latest()->take(3)->get();
-        return view('Home.index',compact('product'),compact('Event'));
+        return view('Home.index',compact('products'),compact('Event'));
     }
     public function view($id)
     {
