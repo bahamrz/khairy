@@ -62,8 +62,11 @@ route::get('/user','UserProfileController@index')->name('user');
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing 
 Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here 
 
-//event edit & update & delete 
+//event edit & update & delete & participation
 
 route::get('/event/{id}/edit','EventController@edit');   
 route::patch('/event/{id}','EventController@update');    
 Route::delete('/event/{id}','EventController@destroy');
+route::post('/event/participation/{id}','EventController@ParticipationEvent');  
+Route::delete('/event/participation/{id}','EventController@deleteParticipationEvent');  
+
