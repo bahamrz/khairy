@@ -28,6 +28,11 @@
         {{Session::get('success')}}
     </div>
 @endif
+@if(Session::has('fail'))
+    <div class="alert alert-danger">
+       {{Session::get('fail')}}
+    </div>
+@endif
 </div>
 
   <section class="ftco-section">
@@ -49,7 +54,7 @@
               </div>
               <h3 class="heading mt-3 text-right"><a href="/view/{{$product->id}}">{{$product->name}}</a></h3>
               <p class="text-right"> {{$product -> description}} </p>
-              @if(Auth::id() == $product->user_id )
+              @if(Auth::id() == $product->user_id)
               <p><a class="bg-light pl-5 disabled" href="/reserve/{{$product->id}}"
                 style="pointer-events: none !important;
                       cursor: default !important;

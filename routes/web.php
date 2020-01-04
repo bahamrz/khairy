@@ -59,12 +59,12 @@ route::post('/createorganization','OrganizationController@organizationstore')->n
 route::get('/user','UserProfileController@index')->name('user');
 
 
-route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing 
-Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here 
+route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing
+Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here
 
-//event edit & update & delete 
+//event edit & update & delete
 
-route::get('/event/{id}/edit','EventController@edit');   
-route::patch('/event/{id}','EventController@update');    
+route::get('/event/{id}/edit','EventController@edit');
+route::patch('/event/{id}','EventController@update');
 Route::delete('/event/{id}','EventController@destroy');
  

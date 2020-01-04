@@ -45,9 +45,10 @@ input[type=submit]:hover {
 
 @extends('Layout.main')
 @section('title', '| إنشاء تبرع جديد')
-    
+
+
 @section('content')
-    
+
 <body style="background-color:#41B3A3;">
 
 <div class="container " style="padding-top:100px; padding-bottom:100px;">
@@ -57,7 +58,16 @@ input[type=submit]:hover {
               <div class="card-header text-right">بيانات التبرع</div>
 
               <div class="card-body">
-      
+                @if ($errors->count())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
       <form method="POST" enctype="multipart/form-data" action="{{route('actionstore')}}">
         @csrf
         <div>
@@ -69,9 +79,9 @@ input[type=submit]:hover {
         <div>
           {{-- <label >product Description</label> --}}
           <textarea name="description" class="form-control" placeholder="وصف المنتج"></textarea>
-          
+
         </div>
-        
+
         <div>
           <label for="category" class="col-md-2 col-form-label text-md-right">النوع</label>
           <select class="form-control" name="category">
@@ -79,7 +89,7 @@ input[type=submit]:hover {
             <option value="{{ $category->id}}"> {{ $category->name }}</option>
             @endforeach
           </select>
-          
+
         </div>
         <div>
           <label for="status" class="col-md-2 col-form-label text-md-right">حالة المنتج</label>
@@ -88,7 +98,7 @@ input[type=submit]:hover {
             <option value="{{ $status->id}}"> {{ $status->name }}</option>
             @endforeach
           </select>
-          
+
         </div>
         <div>
           <label for="image" class="col-2 col-form-label py-5px">الصورة</label>
@@ -102,7 +112,7 @@ input[type=submit]:hover {
 
         </div>
       </form>
-      
+
 </div>
 </div>
 </div>
@@ -110,4 +120,3 @@ input[type=submit]:hover {
 </div>
 </body>
 @endsection
-
