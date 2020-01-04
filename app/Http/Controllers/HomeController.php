@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\product;
@@ -31,9 +33,9 @@ class HomeController extends Controller
         // return Redirect::to("/")->withSuccess('Success order');
         // return "hi";
         // return view('home');
-        $product = product::latest()->take(3)->get();
+        $products = product::latest()->take(3)->get();
         $Event = Event::latest()->take(3)->get();
-        return view('Home.index',compact('product'),compact('Event'));
+        return view('Home.index',compact('products'),compact('Event'));
     }
     public function view($id)
     {
@@ -58,13 +60,20 @@ class HomeController extends Controller
       // $reserve->product_id = $id;
       //
       // $reserve->save();
+      $user_request  = donation_resarvation::where('user_id',Auth::getUser()->id)
+                                            ->where('product_id',product::find($id)->id)
+                                            ->first(); // you can use count() or exists();
 
-      $product = product::find($id);
-      $product->orders++;
-      $product->save();
+      if (is_null($user_request)) {
+        $product = product::find($id);
+        $product->orders++;
+        $product->save();
 
+        Product::find($id)->reservers()->attach(auth()->user());
+        return redirect()->route('donation.index')->withSuccess('Your Order was Seccessful ! , some one will contact you soon if they choose you for there donation ')->with($user_request);
+      }else {
+        return redirect()->route('donation.index')->withFail('Your Order already been submitted !');
+      }
 
-      Product::find($id)->reservers()->attach(auth()->user());
-      return redirect()->route('donation.index')->withSuccess('Your Order was Seccessful ! , some one will contact you soon if they choose you for there donation ');
     }
 }
