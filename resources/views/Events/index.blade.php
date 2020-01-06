@@ -41,12 +41,29 @@
               <div class="meta mb-3">
                 <div><a href="#">{{$Event->created_at->diffForHumans()}}</a></div>
                 <div><a href="#">{{$Event->Organization->Org_Name}} </a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span>عدد المشاركات</a></div>
+                <div><a href="#" class="meta-chat"><span class="icon-chat"></span>عدد المشاركات : {{DB::table('Participations')->select('user_id')->where('even_id','=',$Event->id)->count()}}</a></div>
               </div>
-            <h3 class="heading mb-4"><a href="/viewe/{{$Event-> id}}">{{$Event->Name}}</a></h3>
+            <h3 class="heading mb-4"><a href="/viewe/{{$Event->id}}">{{$Event->Name}}</a></h3>
               <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> {{$Event->Date}} </span> <span><i class="icon-map-o"></i> {{$Event->Place}} </span></p>
-              <p>{{$Event->Description}}</p>
-              <p><a href="#">انظم الي الحمله <i class="ion-ios-arrow-forward"></i></a></p>
+              <p {{$see=false}} {{$UsersInEvent=DB::table('Participations')->select('user_id')->where('even_id','=',$Event->id)->get()}}>{{$Event->Description}}</p>   
+                 @foreach ($UsersInEvent as $UserInEvent) 
+                  @if($UserInEvent->user_id == Auth::user()->id)
+                  <div {{$see=true}}></div>
+                   @endif                 
+                  @endforeach   
+               @if($see) 
+                <form class="" action="{{ url("/event/participation/$Event->id") }}" method="post">
+            @csrf
+            @method('DELETE')
+            <input type="submit" class="bg-light pl-5" value="الغاء مشاركة">
+          </form>
+              @else
+              <p><form class="" action="{{ url('/event/participation/'. $Event->id) }}" method="post">
+               @csrf
+                       
+              <input type="submit" class="bg-light pl-5" value="مشاركة">
+              </form></p>
+               @endif
             </div>
           </div>
         </div>
@@ -75,7 +92,7 @@
         </div>
       </div>
     </div>
-  </section>
+   </section>
   <!-- main cards section -->
   
   @endsection
