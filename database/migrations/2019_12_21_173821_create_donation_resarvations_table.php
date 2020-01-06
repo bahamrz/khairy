@@ -19,7 +19,7 @@ class CreateDonationResarvationsTable extends Migration
                   ->references('id')
                   ->on('users');
             $table->integer('product_id')
-                  ->references('id')
+                  ->references('id') 
                   ->on('products');
             $table->timestamps();
         });
