@@ -81,7 +81,7 @@ class DonationController extends Controller
         Product::find($id)->delete();
 
         return redirect('/donation');
-    }
+    } 
     private function rules()
     {
         return [
@@ -91,5 +91,4 @@ class DonationController extends Controller
             'status' => 'required|exists:product_statuses,id'
         ];
     }
-
 }

@@ -40,15 +40,9 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
        
     
-    <style  type="text/css">
-    html, body, h1, h2, h3, h4, h5, h6 
-    	body{margin-top:20px;} 
-        font-family: 'Tajawal', sans-serif !important;                                                                    
-    </style>
-    
+
 </head>
-<body>
-<section class="ftco-section-w img" style="background-image: url(images/kh_ethics.png); background-size: cover;">
+<body style="background-color:#41B3A3">
  
  <hr>
 <div class="container bootstrap snippet">

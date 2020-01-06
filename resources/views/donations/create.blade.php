@@ -85,15 +85,16 @@ input[type=submit]:hover {
         <div>
           <label for="category" class="col-md-2 col-form-label text-md-right">النوع</label>
           <select class="form-control" name="category">
+            <option value = "none" disabled selected value>الرجاء إختيار صنف</option>
             @foreach($category as $category)
-            <option value="{{ $category->id}}"> {{ $category->name }}</option>
+            <option value="{{ $category->id}}" > {{ $category->name }}</option>
             @endforeach
           </select>
-
         </div>
         <div>
           <label for="status" class="col-md-2 col-form-label text-md-right">حالة المنتج</label>
           <select class="form-control" name="status">
+            <option value = "none" disabled selected value>الرجاء إختيار حالة</option>
             @foreach($status as $status)
             <option value="{{ $status->id}}"> {{ $status->name }}</option>
             @endforeach
