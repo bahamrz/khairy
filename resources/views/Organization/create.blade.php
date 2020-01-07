@@ -12,17 +12,16 @@
                 @csrf
                   <div class = "input-group row py-10%">
                     {{-- <label >Organization Name</label> --}}
-                      <input type = "text" class = "form-control" name = "Org_Name" placeholder = "إسم المنظمة">
+                      <input type = "text" class = "form-control" name = "Org_Name" placeholder = "إسم المنظمة" required>
                   </div>
                   <hr>
                   <div class = "input-group row py-10%">
                     {{-- <label >Organization Description</label> --}}
-                    <textarea name = "Org_Desc" class = "form-control" placeholder = "وصف المنظمة">
-                    </textarea>
+                    <textarea name = "Org_Desc" class = "form-control" placeholder = "وصف المنظمة" required></textarea>
                   </div>
                   <hr>
                   <div class = "input-group row py-10%">
-                    <input type = "submit" class = "btn btn-primary" value = "إنشاء المنظمة">
+                    <input type = "submit" class = "btn btn-primary offset-10" value = "إنشاء المنظمة">
                   </div>
                 </form>
             </div>

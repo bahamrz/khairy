@@ -16,9 +16,9 @@ if (Gate::denies('user-show')){
 
     $userprod= auth()->user()->products;
     $userprodCount=auth()->user()->products()->count();
-    $userevnt=auth()-user()->events;
+    //$userevnt=auth()-user()->events;
 
-    return view('UserProfile.userProfile', compact('userprod','userprodCount','userevent'));
+    return view('UserProfile.userProfile', compact('userprod','userprodCount'));
 
     
 

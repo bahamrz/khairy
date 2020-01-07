@@ -25,6 +25,8 @@ route::get('/event','EventController@index')->name('event.index');
 
 route::get('/event/create','EventController@create')->middleware('auth');
 route::post('/createevent','EventController@eventstore')->name('newevent');
+//participation test
+route::get('/createpart/{id}','PartController@partstore')->name('store');
 
 //donations page route
 route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where;
@@ -62,9 +64,11 @@ route::get('/user','UserProfileController@index')->name('user');
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing
 Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here
 
-//event edit & update & delete
+//event edit & update & delete & participation
 
 route::get('/event/{id}/edit','EventController@edit');
 route::patch('/event/{id}','EventController@update');
 Route::delete('/event/{id}','EventController@destroy');
- 
+route::post('/event/participation/{id}','EventController@ParticipationEvent');  
+Route::delete('/event/participation/{id}','EventController@deleteParticipationEvent');  
+
