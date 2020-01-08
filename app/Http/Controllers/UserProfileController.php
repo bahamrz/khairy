@@ -14,6 +14,8 @@ if (Gate::denies('user-show')){
   return redirect('home');
 }
 
+ //return auth()-user()->participations;
+
     $userprod= auth()->user()->products;
     $userprodCount=auth()->user()->products()->count();
     //$userevnt=auth()-user()->events;
@@ -24,6 +26,18 @@ if (Gate::denies('user-show')){
 
 }
 
+public function update(Request $request , $id)
+{
+
+ $user = User::find($id);
+ $user->name = $request->name;
+ $user->email =$request->email;
+ $user->save();
+
+ return redirect()->back();
+
+
+}
 
 
 }

@@ -59,7 +59,7 @@ route::post('/createorganization','OrganizationController@organizationstore')->n
 
 //User Profile Page route
 route::get('/user','UserProfileController@index')->name('user');
-
+route::post('/user/update/{id}','UserProfileController@update')->name('user.update');
 
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing
 Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here

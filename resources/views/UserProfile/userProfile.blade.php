@@ -150,13 +150,13 @@
                 <div class="tab-pane" id="editAccount">
 
                     <hr>
-                    <form class="form" action="{{route('user')}} method="get" id="registrationForm">
+                    <form class="form" action="{{route('user.update',auth()->user()->id)}}" method="post" id="registrationForm">
                         <div class="form-group">
-
+@csrf
                             <div class="col-xs-6"  >
                                 <label for="first_name">
                                     <h4>Name</h4></label>
-                                <input type="text" class="form-control" name="{{ Auth::user()->name }}" id="{{ Auth::user()->name }}" placeholder="first name" >
+                                <input value="{{auth()->user()->name}}" type="text" class="form-control" name="name"  placeholder="first name" >
                             </div>
                         </div>
                         
@@ -175,7 +175,7 @@
                             <div class="col-xs-6">
                                 <label for="email">
                                     <h4>Email</h4></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                <input value="{{auth()->user()->email}}" type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
                             </div>
                         </div>
                         
