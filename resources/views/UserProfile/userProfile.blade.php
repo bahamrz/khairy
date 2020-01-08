@@ -91,7 +91,7 @@
 
             <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                
+                <li><a href="#events" data-toggle="tab">Events</a></li>
                 <li><a href="#editAccount" data-toggle="tab">Edit Account</a></li>
             </ul>
 
@@ -150,24 +150,16 @@
                 <div class="tab-pane" id="editAccount">
 
                     <hr>
-                    <form class="form" action="#" method="post" id="registrationForm">
+                    <form class="form" action="{{route('user.update',auth()->user()->id)}}" method="post" id="registrationForm">
                         <div class="form-group">
-
-                            <div class="col-xs-6">
+@csrf
+                            <div class="col-xs-6"  >
                                 <label for="first_name">
-                                    <h4>First name</h4></label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                    <h4>Name</h4></label>
+                                <input value="{{auth()->user()->name}}" type="text" class="form-control" name="name"  placeholder="first name" >
                             </div>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="last_name">
-                                    <h4>Last name</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                            </div>
-                        </div>
-
+                        
                         <div class="form-group">
 
                             <div class="col-xs-6">
@@ -177,29 +169,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="mobile">
-                                    <h4>Mobile</h4></label>
-                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
 
                             <div class="col-xs-6">
                                 <label for="email">
                                     <h4>Email</h4></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                <input value="{{auth()->user()->email}}" type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
                             </div>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="email">
-                                    <h4>Location</h4></label>
-                                <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
 
                             <div class="col-xs-6">
@@ -208,13 +187,7 @@
                                 <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
                             </div>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="password2">
-                                    <h4>Verify</h4></label>
-                                <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                            </div>
+                        
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
