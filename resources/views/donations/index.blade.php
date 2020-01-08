@@ -64,7 +64,7 @@
                   <p><form class="" action="{{  url('/product/resarvation/'. $product->id) }}" method="post">
                       @csrf
                       @method('DELETE')
-                      <input type="submit" class="bg-light pl-5" value="الغاء الحجز">
+                      <input type="submit" class="btn btn-info btn-block pl-5" value="الغاء الحجز">
                     </form></p>
                   @elseif(Auth::id() == $product->user_id)
                   {{-- @if(Auth::id() == $product->user_id) --}}
@@ -72,7 +72,7 @@
                   <p><form class="" action="{{ url('/product/resarvation/'. $product->id) }}" method="post">
                         @csrf
                         {{-- <input type="submit" class="btn btn-info btn-block pl-5" value="مشاركة"> --}}
-                          <input  type="submit" class="bg-light pl-5" value="حجز" >
+                          <input  type="submit" class="btn btn-info btn-block pl-5" value="حجز" >
                     </form></p>
                     @endif
                   {{-- <p><a class="bg-light pl-5 disabled" href="/reserve/{{$product->id}}"
@@ -82,7 +82,7 @@
                   @else
                   <p><a type="submit" class="bg-light pl-5" href="/reserve/{{$product->id}}"> حجز</a>
                   @endif --}}
-                  <a class="bg-light pl-5" href="/view/{{$product->id}}"> تفاصيل</a></p>
+                  <a class="btn bg-warning btn-block pl-5" href="/view/{{$product->id}}"> تفاصيل</a></p>
                 </div>
             </div>
         </div>

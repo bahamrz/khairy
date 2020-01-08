@@ -2,13 +2,10 @@
 @section('title', '| عرض التبرعات ')
 @section('content')
 <body style="background-color:#41B3A3; direction:rtl;">
-
-{{-- <div class="container text-right " style="margin-top:15%; margin-bottom:10%; " > --}}
   <div class = "container text-right" style = "padding-top:100px; padding-bottom:100px;">
     <div class = "row justify-content-center">
       <div class = "col-md-12">
         <div class = "card py-300%">
-          {{-- <div class = "card-header text-right">بيانات التبرع</div> --}}
             <div class = "card-body">  
               <div class="container">
         <div>
@@ -34,6 +31,7 @@
                         وصف التبرع:  {{$product-> description}}
                         </div>
                     </div>
+                    <hr>
                     @if (Auth::id() == $product-> user_id)
                     <div class="card">
                       <div class="card-body" {{$Usersdonation=DB::table('donation_resarvations')->select('user_id')->where('PRODUCT_ID','=',$product->id)->get()}}>
@@ -48,6 +46,7 @@
                         </div>
                     </div>
                     @endif
+                    <hr>
                   </div>
                   @if($product->image == null)                             
                     {{-- <img src="/images/love.jpg" alt=" defult img " class="img-thumbnail"> --}}
@@ -60,12 +59,11 @@
                                 <img src="{{ asset(Storage::url($product->image))}}" class="img-thumbnail">
                                 </div>
                              </div>
-                         </div>
-                   @endif
-                          
+                         </div> 
+                   @endif 
                      </div {{$see=false}}{{ $Usersdonation=DB::table('donation_resarvationS')->select('user_id')->where('PRODUCT_ID','=',$product->id)->get()}}>       
                  @foreach ($Usersdonation as $Userdonation)                            
-                    @if($Userdonation->user_id == Auth::id())
+                    @if($Userdonation->user_id == Auth::id() || Auth::id()==1)
                       <div {{$see=true}}></div>
                     @endif    
                  @endforeach
@@ -73,16 +71,15 @@
                   <p><form class="" action="{{  url('/product/resarvation/'. $product->id) }}" method="post">
                       @csrf
                       @method('DELETE')              
-                      <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="الغاء الحجز"> 
+                      <input type="submit" class="col-3 btn btn-info float-right btn-lg mt-1 mb-1" value="الغاء الحجز"> 
                     </form></p>
                   @elseif(Auth::id() == $product->user_id)                  
                   @else
                   <p><form class="" action="{{ url('/product/resarvation/'. $product->id) }}" method="post">
                         @csrf                        
-                      <input type="submit" class="col-3 btn btn-info btn-lg mt-1 mb-1" value="حجز">                         
+                      <input type="submit" class="col-3 btn btn-info float-right btn-lg mt-1 mb-1" value="حجز">                         
                     </form></p>
                     @endif
-
         @if (Auth::id() == $product-> user_id)
         <form class="" action="{{url('/donation/' . $product->id) . '/edit'}}" method="Get">
           <input type="submit" class="col-4 btn btn-secondary btn-lg mt-1 mb-1 float-right btn-block" value="تعديل">

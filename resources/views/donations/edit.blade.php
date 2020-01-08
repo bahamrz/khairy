@@ -42,9 +42,11 @@
                     <hr>
                     <div class = "input-group row">
                       <label for="image" class="col-sm-2 col-form-label">الصورة</label>
+                      
                       <input type="file" id="image" name="image" class="form-control">
                       @if ($product->image)
-                        <img src="{{  asset(Storage::url($product->image)) }}" alt="" width="250">
+                      <img class="form-control" src="{{  asset(Storage::url($product->image)) }}" alt="" width="250" height="250">
+                      
                       @endif
                     </div>
                     <hr>

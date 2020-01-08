@@ -45,7 +45,7 @@
                       {{-- <label for="image" class="col-2 col-form-label">Image</label> --}}
                       <input type="file" id="image" name="image" class="form-control">
                         @if ($Event->image)
-                          <img src="{{  asset(Storage::url($Event->image)) }}" alt="" width="250">
+                          <img src="{{  asset(Storage::url($Event->image)) }}" class="form-control" alt="" width="250">
                         @endif
                     </div>
                     <hr>
