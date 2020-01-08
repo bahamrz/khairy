@@ -64,6 +64,8 @@
                         <input type="submit" class="btn btn-info btn-block pl-5" value="مشاركة">
                     </form></p>
                   @endif
+                    <a class="bg-light pl-5" href="/viewe/{{$Event->id}}"> تفاصيل</a></p>
+
               </div>
             </div>
           </div>
