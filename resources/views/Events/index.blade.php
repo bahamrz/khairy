@@ -44,9 +44,12 @@
                   <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> {{$Event->Date}} </span> <span><i class="icon-map-o"></i> {{$Event->Place}} </span></p>
                   <p {{$see=false}} {{$UsersInEvent=DB::table('Participations')->select('user_id')->where('even_id','=',$Event->id)->get()}}>{{$Event->Description}}</p>   
                   @foreach ($UsersInEvent as $UserInEvent) 
-                    @if($UserInEvent->user_id == Auth::user()->id)
+                   
+                    @if($UserInEvent->user_id == Auth::id())
                       <div {{$see=true}}></div>
-                    @endif                 
+                    @endif     
+                                  
+
                   @endforeach   
                   {{-- Suscribe Button Starts Here --}}
                   @if($see) 
@@ -61,6 +64,8 @@
                         <input type="submit" class="btn btn-info btn-block pl-5" value="مشاركة">
                     </form></p>
                   @endif
+                    <a class="bg-light pl-5" href="/viewe/{{$Event->id}}"> تفاصيل</a></p>
+
               </div>
             </div>
           </div>

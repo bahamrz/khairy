@@ -31,8 +31,8 @@ class OrganizationController extends Controller
     $Org->Org_Desc = request('Org_Desc');
     $Org->save();
     
-    
-    return redirect('/organization');
+    return view('Organization.create');
+    // return redirect('/organization');
 
 
   }

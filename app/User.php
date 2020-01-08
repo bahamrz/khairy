@@ -67,6 +67,6 @@ class User extends Authenticatable
       return $this->belongsToMany('App/Product', 'donation_resarvations');
     }
     public function participations(){
-      return $this->belongsToMany('App\Event');
+      return $this->belongsToMany('App\Event', 'participations', 'even_id', 'user_id');
     }
 }

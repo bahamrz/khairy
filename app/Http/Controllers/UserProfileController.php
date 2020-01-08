@@ -18,8 +18,11 @@ if (Gate::denies('user-show')){
   return redirect('home');
 }
 
+ //return auth()-user()->participations;
+
     $userprod= auth()->user()->products;
     $userprodCount=auth()->user()->products()->count();
+    //$userevnt=auth()-user()->events;
 
 
     return view('UserProfile.userProfile', compact('userprod','userprodCount','users'));
@@ -53,7 +56,23 @@ public function update(Request $request, $id)
           $usr->password = Hash::make(request('password'));
         }
         $usr->save();
-        // $usr->update();
+
+// Yousra Code
+//     return view('UserProfile.userProfile', compact('userprod','userprodCount'));
+// }
+
+// public function update(Request $request , $id)
+// {
+
+//  $user = User::find($id);
+//  $user->name = $request->name;
+//  $user->email =$request->email;
+//  $user->save();
+
+//  return redirect()->back();
+
+
+// }
 
         return redirect('/user');
     }

@@ -25,6 +25,8 @@ route::get('/event','EventController@index')->name('event.index');
 
 route::get('/event/create','EventController@create')->middleware('auth');
 route::post('/createevent','EventController@eventstore')->name('newevent');
+//participation test
+route::get('/createpart/{id}','PartController@partstore')->name('store');
 
 //donations page route
 route::get('/donation','DonationController@index')->name('donation.index');         // name: is to name the route instead of rewriting the route every where;
@@ -59,16 +61,22 @@ route::post('/createorganization','OrganizationController@organizationstore')->n
 route::get('/user','UserProfileController@show')->name('user'); 
 route::get('/user/{id}/edit','UserProfileController@edit');
 route::patch('/user/update/{id}','UserProfileController@update');
-
+//Yousra Routes
+// route::get('/user','UserProfileController@index')->name('user');
+// route::post('/user/update/{id}','UserProfileController@update')->name('user.update');
 
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing
 Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here
 
 //event edit & update & delete & participation
 
-route::get('/event/{id}/edit','EventController@edit');
-route::patch('/event/{id}','EventController@update');
-Route::delete('/event/{id}','EventController@destroy');
-route::post('/event/participation/{id}','EventController@ParticipationEvent');  
-Route::delete('/event/participation/{id}','EventController@deleteParticipationEvent');  
+route::get('/event/{id}/edit','EventController@edit')->middleware('auth');
+route::patch('/event/{id}','EventController@update')->middleware('auth');
+Route::delete('/event/{id}','EventController@destroy')->middleware('auth');
+route::post('/event/participation/{id}','EventController@ParticipationEvent')->middleware('auth');  
+Route::delete('/event/participation/{id}','EventController@DeleteParticipationEvent')->middleware('auth');  
 
+
+// product_resarvation & DELETE IT
+ROUTE::post('/product/resarvation/{id}','DonationController@RsarvationProduct')->middleware('auth');  
+Route::delete('/product/resarvation/{id}','DonationController@DeleteRsarvationProduct')->middleware('auth');  

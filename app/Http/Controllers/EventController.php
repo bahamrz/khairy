@@ -77,7 +77,7 @@ class EventController extends Controller
 
         }
 
-        public function deleteParticipationEvent($id){
+        public function DeleteParticipationEvent($id){
             $EventId=Event::find($id)->id;
             $UserId=Auth::user()->id;           
             DB::table('Participations')->where([['even_id','=',$EventId],['user_id','=',$UserId]])->delete();
