@@ -52,15 +52,36 @@
                         <div><a href="#" class="meta-chat"><span class="icon-user"></span> {{$product->orders}}</a></div>
                   </div>
                   <h3 class="heading mt-3 text-right"><a href="/view/{{$product->id}}">{{$product->name}}</a></h3>
-                  <p class="text-right"> {{$product -> description}} </p>
-                  @if(Auth::id() == $product->user_id)
-                  <p><a class="bg-light pl-5 disabled" href="/reserve/{{$product->id}}"
+                  <p class="text-right" {{$see=false}}{{ $Usersdonation=DB::table('donation_resarvationS')->select('user_id')->where('PRODUCT_ID','=',$product->id)->get()}}> {{$product -> description}} </p>
+                 @foreach ($Usersdonation as $Userdonation)
+                             
+                    @if($Userdonation->user_id == Auth::id())
+                      <div {{$see=true}}></div>
+                    @endif    
+                             
+                  @endforeach
+                  @if($see) 
+                  <p><form class="" action="{{  url('/product/resarvation/'. $product->id) }}" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <input type="submit" class="bg-light pl-5" value="الغاء الحجز">
+                    </form></p>
+                  @elseif(Auth::id() == $product->user_id)
+                  {{-- @if(Auth::id() == $product->user_id) --}}
+                  @else
+                  <p><form class="" action="{{ url('/product/resarvation/'. $product->id) }}" method="post">
+                        @csrf
+                        {{-- <input type="submit" class="btn btn-info btn-block pl-5" value="مشاركة"> --}}
+                          <input  type="submit" class="bg-light pl-5" value="حجز" >
+                    </form></p>
+                    @endif
+                  {{-- <p><a class="bg-light pl-5 disabled" href="/reserve/{{$product->id}}"
                     style="pointer-events: none !important;
                       cursor: default !important;
                       color: gray !important;"> حجز</a>
                   @else
-                  <p><a class="bg-light pl-5" href="/reserve/{{$product->id}}"> حجز</a>
-                  @endif
+                  <p><a type="submit" class="bg-light pl-5" href="/reserve/{{$product->id}}"> حجز</a>
+                  @endif --}}
                   <a class="bg-light pl-5" href="/view/{{$product->id}}"> تفاصيل</a></p>
                 </div>
             </div>

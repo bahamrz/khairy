@@ -9,6 +9,9 @@ use App\category;
 use App\product_status;
 use Auth;
 use App\User;
+use App\donation_resarvation;
+use Illuminate\Support\Facades\DB;
+
 
 class DonationController extends Controller
 {
@@ -82,6 +85,7 @@ class DonationController extends Controller
 
         return redirect('/donation');
     } 
+
     private function rules()
     {
         return [
@@ -91,4 +95,23 @@ class DonationController extends Controller
             'status' => 'required|exists:product_statuses,id'
         ];
     }
+
+    public function RsarvationProduct($id){
+      $RsarvationProduct1 = new donation_resarvation;        
+      $RsarvationProduct1->user_id = Auth::user()->id;
+      $RsarvationProduct1->product_id = Product::find($id)->id;
+      $RsarvationProduct1->save();
+      return redirect()->route('donation.index');
+
+
+  }
+
+  public function DeleteRsarvationProduct($id){
+      $ProductId=Product::find($id)->id;
+      $UserId=Auth::user()->id;           
+      DB::table('donation_resarvations')->where([['product_id','=',$ProductId],['user_id','=',$UserId]])->delete();
+      return redirect()->route('donation.index');
+
+  }
+
 }

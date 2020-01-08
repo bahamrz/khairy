@@ -64,9 +64,13 @@ Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-
 
 //event edit & update & delete & participation
 
-route::get('/event/{id}/edit','EventController@edit');
-route::patch('/event/{id}','EventController@update');
-Route::delete('/event/{id}','EventController@destroy');
-route::post('/event/participation/{id}','EventController@ParticipationEvent');  
-Route::delete('/event/participation/{id}','EventController@deleteParticipationEvent');  
+route::get('/event/{id}/edit','EventController@edit')->middleware('auth');
+route::patch('/event/{id}','EventController@update')->middleware('auth');
+Route::delete('/event/{id}','EventController@destroy')->middleware('auth');
+route::post('/event/participation/{id}','EventController@ParticipationEvent')->middleware('auth');  
+Route::delete('/event/participation/{id}','EventController@DeleteParticipationEvent')->middleware('auth');  
 
+
+// product_resarvation & DELETE IT
+ROUTE::post('/product/resarvation/{id}','DonationController@RsarvationProduct')->middleware('auth');  
+Route::delete('/product/resarvation/{id}','DonationController@DeleteRsarvationProduct')->middleware('auth');  
