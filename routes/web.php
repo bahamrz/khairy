@@ -56,7 +56,9 @@ route::get('/organization/create','OrganizationController@create')->middleware('
 route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
 
 //User Profile Page route
-route::get('/user','UserProfileController@index')->name('user');
+route::get('/user','UserProfileController@show')->name('user'); 
+route::get('/user/{id}/edit','UserProfileController@edit');
+route::patch('/user/update/{id}','UserProfileController@update');
 
 
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing

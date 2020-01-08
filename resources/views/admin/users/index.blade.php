@@ -6,7 +6,7 @@
 <body style="background-color:#41B3A3">
     <div class="container " style="padding-top:100px; padding-bottom:100px;">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-12"> 
             <div class="card py-300%">
                 <div class="card-header text-right">المستخدمين</div>
 

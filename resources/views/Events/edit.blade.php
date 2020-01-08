@@ -1,6 +1,6 @@
 @extends('Layout.main')
 @section('title', '| تعديل الحملة')
-@section('content')
+@section('content') 
 <body style = "background-color:#41B3A3;">
   <div class = "container" style = "padding-top:100px; padding-bottom:100px;">
     <div class = "row justify-content-center">
