@@ -101,13 +101,13 @@
           <div class="item">
             <div class="cause-entry align-self-stretch">
               @if($product->image == null)
-                <a href="#" class="img" style="background-image: url('images/love.jpg');"></a>
+                <a class="img" style="background-image: url('images/love.jpg');"></a>
               @else
-                <a href="#" class="img" style="background-image: url('{{ asset(Storage::url($product->image))}}');"></a>
+                <a class="img" style="background-image: url('{{ asset(Storage::url($product->image))}}');"></a>
               @endif
               <div class="text p-3 p-md-4 text-right">
                 <div><h3><a href="{{ url("/view/$product->id") }}">{{$product-> name}}</a></h3></div>
-                <div><a href="#" class="meta-chat"><span class="icon-user"></span> {{$product->orders}}</a></div>
+                <div><a class="meta-chat"><span class="icon-user"></span> {{$product->orders}}</a></div>
               <p class="text-truncate text-right" style="display:block "> {{$product -> description}} </p>
               <span class="donation-time mb-3 d-block">{{$product->created_at->diffForHumans()}}</span>
               <div class="progress custom-progress-success">
@@ -126,9 +126,6 @@
     		</div>
     	</div>
     </section>
-
-
-
     <section style="background-color:#14aeb0">
     <div class="container-fluid">
     		<div class="row justify-content-center mb-4 pb-4">
@@ -141,21 +138,21 @@
             <div class="col-sm-3 col-md-4 ftco-animate " style="">
           	<div class="blog-entry align-self-stretch">
               @if ($Event->image == null)
-              <a href="#" class="block-20" style="background-image: url('images/hands1.jpg');">
+              <a   class="block-20" style="background-image: url('images/hands1.jpg');">
              @else
-             <a href="#" class="block-20" style="background-image: url('{{ asset(Storage::url($Event->image ))}}');">
+             <a  class="block-20" style="background-image: url('{{ asset(Storage::url($Event->image ))}}');">
               @endif
              </a>
               <div class="text p-3 p-md-4 d-block text-right">
               	<div class="meta mb-3">
-                  <div><a href="#">{{$Event->created_at->diffForHumans()}}</a></div>
-                  <div><a href="#">{{$Event->Organization->Org_Name}}</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-user"></span> 3</a></div>
+                  <div><a >{{$Event->created_at->diffForHumans()}}</a></div>
+                  <div><a >{{$Event->Organization->Org_Name}}</a></div>
+                  <div><a class="meta-chat"><span class="icon-user"></span> {{DB::table('Participations')->select('user_id')->where('even_id','=',$Event->id)->count()}}</a></div>
                 </div>
                 <h3 class="heading mb-4"><a href="{{url("/viewe/$Event->id")}}">{{$Event-> Name}}</a></h3>
                 <p class="time-loc"><span class="mr-2"><span><i class="icon-map-o pl-2 pr-2"></i> {{$Event->Date}}</span> <span><i class="icon-clock-o pl-2" ></i> {{$Event->Place}}</span></p>
                 <p class="text-truncate" style="display:block ">{{$Event-> Description}}</p>
-                <p><a href="event">انظم إلى الحملة <i class="ion-ios-arrow-forward"></i></a></p>
+                <p><a href="/viewe/{{$Event->id}}">انظم إلى الحملة <i class="ion-ios-arrow-back"></i></a></p>
               </div>
             </div>
           </div>

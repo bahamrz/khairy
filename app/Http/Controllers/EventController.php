@@ -67,7 +67,7 @@ class EventController extends Controller
         public function destroy($id)
         {
             Event::find($id)->delete();
-            return redirect('/event');
+            return \redirect()->back();
         }
 
         public function ParticipationEvent($id){
@@ -75,7 +75,7 @@ class EventController extends Controller
             $ParticipationEvent1->user_id = Auth::user()->id;
             $ParticipationEvent1->even_id = Event::find($id)->id;
             $ParticipationEvent1->save();
-            return redirect()->route('event.index');
+            return redirect()->back();
 
         }
 
@@ -83,7 +83,7 @@ class EventController extends Controller
             $EventId=Event::find($id)->id;
             $UserId=Auth::user()->id;
             DB::table('Participations')->where([['even_id','=',$EventId],['user_id','=',$UserId]])->delete();
-            return redirect('/event');
+            return redirect()->back();
         }
         private function rules()
         {

@@ -41,7 +41,7 @@ route::post('/newcategory','CategoryController@store')->name('newcategory');
 route::get('/productstatus/create','StatusController@create')->middleware('auth');
 route::post('/newstatus','StatusController@store')->name('newstatus');
 
-route::get('/donation/{id}/edit','DonationController@edit');   //product edit (page)
+route::get('/donation/{id}/edit','DonationController@edit')->middleware('checkuser');   //Only Creator + Admin can edit (page)
 route::patch('/donation/{id}','DonationController@update');     //product update (action_button)
 Route::delete('/donation/{id}','DonationController@destroy'); // delete a product
 
@@ -57,12 +57,18 @@ route::get('/organization','OrganizationController@index');
 route::get('/organization/create','OrganizationController@create')->middleware('auth');
 route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
 
-//User Profile Page route
-route::get('/user','UserProfileController@index')->name('user');
-route::post('/user/update/{id}','UserProfileController@update')->name('user.update');
+//User Profile Page route 
+route::get('/user','UserProfileController@show')->name('user'); 
+route::get('/user/{id}/edit','UserProfileController@edit');
+route::patch('/user/update/{id}','UserProfileController@update');
+//Yousra Routes
+// route::get('/user','UserProfileController@index')->name('user');
+// route::post('/user/update/{id}','UserProfileController@update')->name('user.update');
 
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing
 Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here
+Route::get('/admin/listall','Admin\UsersController@donationlist')->middleware('can:manage-users'); // delete a product
+Route::get('/admin/listalle','Admin\UsersController@eventlist')->middleware('can:manage-users'); // delete a product
 
 //event edit & update & delete & participation
 
