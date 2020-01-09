@@ -49,18 +49,18 @@
                   <div class="meta mb-3">
                     <div><a href="#">{{$product->created_at->toDateString()}}</a></div>
                       <div><a href="#">{{$product->creator->name}}</a></div>
-                        <div><a href="#" class="meta-chat"><span class="icon-user"></span> {{$product->orders}}</a></div>
+                        <div><a href="#" class="meta-chat"><span class="icon-user"></span> {{DB::table('donation_resarvations')->select('user_id')->where('product_id','=',$product->id)->count()}}</a></div>
                   </div>
                   <h3 class="heading mt-3 text-right"><a href="/view/{{$product->id}}">{{$product->name}}</a></h3>
                   <p class="text-right" {{$see=false}}{{ $Usersdonation=DB::table('donation_resarvationS')->select('user_id')->where('PRODUCT_ID','=',$product->id)->get()}}> {{$product -> description}} </p>
                  @foreach ($Usersdonation as $Userdonation)
-                             
+
                     @if($Userdonation->user_id == Auth::id())
                       <div {{$see=true}}></div>
-                    @endif    
-                             
+                    @endif
+
                   @endforeach
-                  @if($see) 
+                  @if($see)
                   <p><form class="" action="{{  url('/product/resarvation/'. $product->id) }}" method="post">
                       @csrf
                       @method('DELETE')

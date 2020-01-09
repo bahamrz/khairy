@@ -38,7 +38,7 @@ route::post('/createaction','DonationController@productstore')->name('actionstor
 route::get('/category/create','CategoryController@create');
 route::post('/newcategory','CategoryController@store')->name('newcategory');
 
-route::get('/productstatus/create','StatusController@create')->middleware('auth');;
+route::get('/productstatus/create','StatusController@create')->middleware('auth');
 route::post('/newstatus','StatusController@store')->name('newstatus');
 
 route::get('/donation/{id}/edit','DonationController@edit');   //product edit (page)
@@ -69,10 +69,10 @@ Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-
 route::get('/event/{id}/edit','EventController@edit')->middleware('auth');
 route::patch('/event/{id}','EventController@update')->middleware('auth');
 Route::delete('/event/{id}','EventController@destroy')->middleware('auth');
-route::post('/event/participation/{id}','EventController@ParticipationEvent')->middleware('auth');  
-Route::delete('/event/participation/{id}','EventController@DeleteParticipationEvent')->middleware('auth');  
+route::post('/event/participation/{id}','EventController@ParticipationEvent')->middleware('auth');
+Route::delete('/event/participation/{id}','EventController@DeleteParticipationEvent')->middleware('auth');
 
 
 // product_resarvation & DELETE IT
-ROUTE::post('/product/resarvation/{id}','DonationController@RsarvationProduct')->middleware('auth');  
-Route::delete('/product/resarvation/{id}','DonationController@DeleteRsarvationProduct')->middleware('auth');  
+ROUTE::post('/product/resarvation/{id}','DonationController@RsarvationProduct')->middleware('auth');
+Route::delete('/product/resarvation/{id}','DonationController@DeleteRsarvationProduct')->middleware('auth');

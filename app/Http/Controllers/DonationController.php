@@ -81,10 +81,13 @@ class DonationController extends Controller
     }
     public function destroy($id)
     {
-        Product::find($id)->delete();
+        $product = Product::find($id);
+
+        \Storage::delete($product->image);
+        $product->delete();
 
         return redirect('/donation');
-    } 
+    }
 
     private function rules()
     {
@@ -97,10 +100,11 @@ class DonationController extends Controller
     }
 
     public function RsarvationProduct($id){
-      $RsarvationProduct1 = new donation_resarvation;        
+      $RsarvationProduct1 = new donation_resarvation;
       $RsarvationProduct1->user_id = Auth::user()->id;
       $RsarvationProduct1->product_id = Product::find($id)->id;
       $RsarvationProduct1->save();
+      
       return redirect()->route('donation.index');
 
 
@@ -108,7 +112,7 @@ class DonationController extends Controller
 
   public function DeleteRsarvationProduct($id){
       $ProductId=Product::find($id)->id;
-      $UserId=Auth::user()->id;           
+      $UserId=Auth::user()->id;
       DB::table('donation_resarvations')->where([['product_id','=',$ProductId],['user_id','=',$UserId]])->delete();
       return redirect()->route('donation.index');
 

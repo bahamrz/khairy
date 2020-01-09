@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\DB;
 class EventController extends Controller
 {
     public function index() {
-        
+
         // $s=DB::table('Participations')->select('user_id')->where('even_id','=',6)->get()
-    
+
         $Eventt = Event::latest()->paginate(6);
         return view('Events.index',['Eventt'=>$Eventt]);
     }
@@ -23,12 +23,13 @@ class EventController extends Controller
       public function create(){
 
           return view('Events.create',['Organization' => Organization::all()]);
-          
+
        }
 
      public function eventstore(){
+       request()->validate($this->rules());
 
-        $Event1 = new Event;        
+        $Event1 = new Event;
         $Event1->Name = request('name');
         $Event1->Date = request('date');
         $Event1->Description = request('description');
@@ -45,15 +46,16 @@ class EventController extends Controller
             return view('Events.edit',['Event'=>$Event ,
             'Organization' => Organization::all()]);
         }
-    
+
         public function update($id)
-        { 
+        {
+          request()->validate($this->rules());
             $Event1 = Event::find($id);
             if (request()->file('image')) {
                 $newImagePath = request()->file('image')->store('public');
                 $Event1->image = str_replace('public/', '', $newImagePath);
             }
-            
+
             $Event1->Name = request('name');
             $Event1->Date = request('date');
             $Event1->Description = request('description');
@@ -69,7 +71,7 @@ class EventController extends Controller
         }
 
         public function ParticipationEvent($id){
-            $ParticipationEvent1 = new Participation;        
+            $ParticipationEvent1 = new Participation;
             $ParticipationEvent1->user_id = Auth::user()->id;
             $ParticipationEvent1->even_id = Event::find($id)->id;
             $ParticipationEvent1->save();
@@ -79,10 +81,18 @@ class EventController extends Controller
 
         public function DeleteParticipationEvent($id){
             $EventId=Event::find($id)->id;
-            $UserId=Auth::user()->id;           
+            $UserId=Auth::user()->id;
             DB::table('Participations')->where([['even_id','=',$EventId],['user_id','=',$UserId]])->delete();
             return redirect('/event');
         }
-
+        private function rules()
+        {
+            return [
+                'Name' => 'required',
+                'Description' => 'required',
+                'Date' => 'required|exists:categories,id',
+                'Place' => 'required|exists:product_statuses,id',
+                'organization_id' =>'required'
+            ];
+        }
 }
-
