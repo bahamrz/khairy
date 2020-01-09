@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Role;
 use Gate; //#Baha
+use App\Product;
+use App\Event;
+
 
 class UsersController extends Controller
 {
@@ -29,7 +32,9 @@ class UsersController extends Controller
         }
 
         $users = User::all();
-        return view('admin.users.index',compact('users'));
+        $product = Product::all();
+        $eve = Event::all();
+        return view('admin.users.index',compact('users','product','eve'));
 
     }
 
@@ -68,7 +73,7 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id 
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -124,4 +129,17 @@ class UsersController extends Controller
         User::find($id)->delete();
         return \redirect()->route('users.index');
     }
+
+    public function donationlist(){         
+        $product = Product::all();
+
+        return view('admin.listall',compact('product'));
+   
+   }    public function eventlist(){         
+
+        $eve = Event::all();
+        return view('admin.listalle',compact('eve'));
+   
+   }
+
 }
