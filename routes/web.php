@@ -38,10 +38,10 @@ route::post('/createaction','DonationController@productstore')->name('actionstor
 route::get('/category/create','CategoryController@create');
 route::post('/newcategory','CategoryController@store')->name('newcategory');
 
-route::get('/productstatus/create','StatusController@create')->middleware('auth');;
+route::get('/productstatus/create','StatusController@create')->middleware('auth');
 route::post('/newstatus','StatusController@store')->name('newstatus');
 
-route::get('/donation/{id}/edit','DonationController@edit');   //product edit (page)
+route::get('/donation/{id}/edit','DonationController@edit')->middleware('checkuser');   //Only Creator + Admin can edit (page)
 route::patch('/donation/{id}','DonationController@update');     //product update (action_button)
 Route::delete('/donation/{id}','DonationController@destroy'); // delete a product
 
@@ -67,16 +67,18 @@ route::patch('/user/update/{id}','UserProfileController@update');
 
 route::get('/Baha', function(){return view('welcome');}); //Baha Is Testing
 Route::resource('/admin/users','Admin\UsersController')->middleware('can:manage-users'); //Baha is Here
+Route::get('/admin/listall','Admin\UsersController@donationlist')->middleware('can:manage-users'); // delete a product
+Route::get('/admin/listalle','Admin\UsersController@eventlist')->middleware('can:manage-users'); // delete a product
 
 //event edit & update & delete & participation
 
 route::get('/event/{id}/edit','EventController@edit')->middleware('auth');
 route::patch('/event/{id}','EventController@update')->middleware('auth');
 Route::delete('/event/{id}','EventController@destroy')->middleware('auth');
-route::post('/event/participation/{id}','EventController@ParticipationEvent')->middleware('auth');  
-Route::delete('/event/participation/{id}','EventController@DeleteParticipationEvent')->middleware('auth');  
+route::post('/event/participation/{id}','EventController@ParticipationEvent')->middleware('auth');
+Route::delete('/event/participation/{id}','EventController@DeleteParticipationEvent')->middleware('auth');
 
 
 // product_resarvation & DELETE IT
-ROUTE::post('/product/resarvation/{id}','DonationController@RsarvationProduct')->middleware('auth');  
-Route::delete('/product/resarvation/{id}','DonationController@DeleteRsarvationProduct')->middleware('auth');  
+ROUTE::post('/product/resarvation/{id}','DonationController@RsarvationProduct')->middleware('auth');
+Route::delete('/product/resarvation/{id}','DonationController@DeleteRsarvationProduct')->middleware('auth');

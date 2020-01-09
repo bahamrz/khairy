@@ -8,6 +8,15 @@
         <div class = "card py-300%">
           <div class = "card-header text-right">بيانات التبرع</div>
             <div class = "card-body">
+                @if ($errors->count())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
               <form method = "POST" action = "{{route('newevent')}}" enctype = "multipart/form-data">
                 @csrf
                   <div class = "input-group row py-10%">
@@ -19,7 +28,7 @@
                     {{-- <label >Organization Name</label> --}}
                     <select class = "form-control" name = "organization_id" hint = "الرجاء إختيار المنظمة">
                       <option value = "none" disabled selected value>الرجاء إختيار المنظمة</option>
-                        @foreach ($Organization as $Org )     
+                        @foreach ($Organization as $Org )
                           <option value = "{{$Org->id}}" > {{$Org->Org_Name}}</option>
                         @endforeach
                     </select>
