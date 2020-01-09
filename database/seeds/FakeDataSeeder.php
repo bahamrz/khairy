@@ -29,6 +29,31 @@ class FakeDataSeeder extends Seeder
               'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
               'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ),
+            array(
+                'name' => 'مفروشات',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+              ),
+              array(
+                'name' => 'ادوت مدرسية',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+              ),
+              array(
+                'name' => 'مواد بناء',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+              ),
+              array(
+                'name' => 'احذيه',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+              ),
+              array(
+                'name' => 'تحف',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+              ),
           ));
 // ------------------------------------- Status Data ---------------------------------------------//
 // DB::table('product_statuses')->truncate();//REmove if Laragon
@@ -39,7 +64,7 @@ DB::table('product_statuses')->insert(array(
         'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
     ),
     array(
-        'name' => 'مستعمل',
+        'name' =>  'مستعمل',
         'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
     ),
