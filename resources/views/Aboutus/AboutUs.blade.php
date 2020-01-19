@@ -9,7 +9,7 @@
           <div class="col-md-12 d-flex ftco-animate">
           </div>
     		<div class="col-md-12 volunteer pl-md-5 ftco-animate">
-    	
+
             <div class=" py-5 service-11">
             <div class="container">
             <br> <br>
@@ -50,12 +50,14 @@
                     </div>
                 </div>
             </div>
-    		</div>    			
+    		</div>
     		</div>
     	</div>
+    </div>
+  
     </section>
 
- 
+
 </body>
 
 @endsection

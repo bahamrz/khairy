@@ -67,7 +67,6 @@ input[type=submit]:hover {
                         </ul>
                     </div>
                 @endif
-
       <form method="POST" enctype="multipart/form-data" action="{{route('actionstore')}}">
         @csrf
         <div>
