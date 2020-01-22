@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 Route::apiResource('products','Api\DonationController', ['only' => ['index','show']]);
 
+Route::apiResource('events','Api\EventController', ['only' => ['index','show']]);
 
 
 //--------------------------------------------------------------------------------------------
