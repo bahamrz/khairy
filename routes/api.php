@@ -24,3 +24,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login', 'Api\AuthController@login');
 Route::post('logout', 'Api\AuthController@logout')->middleware('auth:api');
 Route::get('me', 'Api\AuthController@me')->middleware('auth:api');
+Route::get('user/{id}/edit','Api\UserController@useredit');//->middleware('auth:api');
+
+route::post('/user/update/{id}','Api\UserController@update');
+
+
+Route::get('/user/donations','Api\UserController@showdonations')->middleware('auth:api');
+//
+ 
