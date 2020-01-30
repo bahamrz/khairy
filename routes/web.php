@@ -14,6 +14,7 @@ route::get('/aboutus','AboutusController@index');
 // Contact Us page route
 route::get('/contactus','ContactusController@index');
 route::post('/contactus','ContactusController@create');
+route::post('/contactus/send','ContactusController@send')->name('sendMessage');
 //SignIn page route
 // route::get('/signin','HomeController@signin');
 
@@ -57,8 +58,8 @@ route::get('/organization','OrganizationController@index');
 route::get('/organization/create','OrganizationController@create')->middleware('auth');
 route::post('/createorganization','OrganizationController@organizationstore')->name('neworganization');
 
-//User Profile Page route 
-route::get('/user','UserProfileController@show')->name('user'); 
+//User Profile Page route
+route::get('/user','UserProfileController@show')->name('user');
 route::get('/user/{id}/edit','UserProfileController@edit');
 route::patch('/user/update/{id}','UserProfileController@update');
 //Yousra Routes

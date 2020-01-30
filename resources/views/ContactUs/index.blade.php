@@ -11,24 +11,45 @@
           </div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
     			<h3 class="mb-3 text-right">تواصل معنا</h3>
-    			<form action="#" class="volunter-form">
+          @if(count($errors)>0)
+					<div class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<ul>
+							@foreach ($errors->all() as $error)
+							<li>* {{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+					@endif
+					@if($message = Session::get('success'))
+					<div class="alert alert-success">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<p>{{ $message }}</p>
+					</div>
+					@endif
+    			<form action="{{route('sendMessage')}}" method="post" class="volunter-form">
+            @csrf
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="اسمك">
+              <input type="text" name="name" class="form-control" placeholder="اسمك">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="بريدك الأكتروني">
+              <input type="text" class="form-control" name="email" placeholder="بريدك الأكتروني">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="رقم هاتفك">
+              <input type="text" class="form-control" name="phoneNumber" placeholder="رقم هاتفك">
             </div>
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="اكتب رسالتك هنا"></textarea>
+              <textarea id="" cols="30" rows="3" name="message" class="form-control" placeholder="اكتب رسالتك هنا"></textarea>
             </div>
             <div class="form-group">
               <input type="submit" value="ارسل" class="btn btn-white py-3 px-5 text-right">
             </div>
           </form>
-    		</div>    			
+    		</div>
     		</div>
     	</div>
     </section>

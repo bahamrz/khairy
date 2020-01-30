@@ -13,8 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 Route::apiResource('products','Api\DonationController', ['only' => ['index','show']]);
+Route::post('/reserve/{id}','Api\DonationController@store')->middleware('auth:api');;
+
 
 Route::apiResource('events','Api\EventController', ['only' => ['index','show']]);
+
 
 //--------------------------------------------------------------------------------------------
 Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -31,4 +34,3 @@ route::post('/user/update/{id}','Api\UserController@update');
 
 Route::get('/user/donations','Api\UserController@showdonations')->middleware('auth:api');
 //
- 
